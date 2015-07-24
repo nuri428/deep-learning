@@ -9,16 +9,16 @@ WinPython이라는 패키지로 설치.
  
  
 ##2. CUDA 설치  
-NVIDIA에서 CUDA 툴킷을 다운로드 받아서 설치.   
+NVIDIA에서 [CUDA 툴킷](https://developer.nvidia.com/cuda-toolkit)을 다운로드 받아서 설치.   
+ 이 글을 쓰고 있는 현재 7.0이 정식 버젼이라 7.0 설치. 
  7.0 버젼   설치시 드라이브가 제대로 설정 안되어 있어서 뭐 어쩌고 저쩌고 메세지 나옴  가볍게 무시하고 설치.   
  PATH에서 CUDA 경로 추가. 
- 
  
  
 ##3. Visual Studio 설치   
 python 패키지 설치를 위해서는 visual Studio나 MinGW 같은 컴파일러가 필요하나...  
 Visual Studion 2012를 설치.   
-MS 홈페이지 Visual Studio 2012 Express 버젼을 설치. 
+(MS 홈페이지)[https://www.microsoft.com/ko-kr/download/details.aspx?id=34673] Visual Studio 2012 Express 버젼을 설치. 
  
  
 ##4. Visual Studio 일부 수정.    
