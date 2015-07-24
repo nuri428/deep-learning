@@ -1,5 +1,6 @@
 #윈도우에서 Theano 설치 하기 
- 
+(#윈도우용 프리 빌드된 python 라이브러리)[http://www.lfd.uci.edu/~gohlke/pythonlibs/]
+
  
 ##1. python 설치 하기    
 Theano를 위해서는 pyCuda와 같은 라이브러리를 컴파일 해야 하기 때문에일반적인 Python이 아니라
