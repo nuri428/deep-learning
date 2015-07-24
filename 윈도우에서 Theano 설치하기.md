@@ -49,8 +49,9 @@ mingw가 설치 되었는지 물어보고,
 
 ##7. pycuda 설치 
 pip install pycuda로 설치 
-boost가 설치 안되어 있을 경우 설치 오류 발생. -> boost 설치 
-컴파일러 경로 오류시 오류 발생 -> 6번 항목에서 mingw 설치 경로 입력 부분 수정 
+boost가 설치 안되어 있을 경우 설치 오류 발생. -> boost 설치<br> 
+컴파일러 경로 오류시 오류 발생 -> 6번 항목에서 mingw 설치 경로 입력 부분 수정<br>
+[pycuda설치방법 영문판](http://wiki.tiker.net/PyCuda/Installation/Windows#Windows_7_64-bit_with_Visual_Studio_Professional_2008_.28Strictly_Binary_Versions.29) 참고
 
 ##8. Theano 설치    
 pip install Theano로 설치 
