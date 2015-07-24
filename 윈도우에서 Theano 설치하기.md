@@ -18,7 +18,7 @@ NVIDIA에서 [CUDA 툴킷](https://developer.nvidia.com/cuda-toolkit)을 다운�
 ##3. Visual Studio 설치   
 python 패키지 설치를 위해서는 visual Studio나 MinGW 같은 컴파일러가 필요하나...  
 Visual Studion 2012를 설치.   
-(MS 홈페이지)[https://www.microsoft.com/ko-kr/download/details.aspx?id=34673] Visual Studio 2012 Express 버젼을 설치. 
+[MS 홈페이지](https://www.microsoft.com/ko-kr/download/details.aspx?id=34673) Visual Studio 2012 Express 버젼을 설치. 
  
  
 ##4. Visual Studio 일부 수정.    
