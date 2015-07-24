@@ -8,9 +8,9 @@
 동작가능한 실행 파일에 환경만 바꿔가면서 작업 하는것이 나을것 같네요.<br>
 참고로 예제를 동작하기 위해 필요한 (파일)[http://dl.dropboxusercontent.com/u/3466743/caffe-vs2012/dependency-20140804.7z]도 같이 다운로드 받으셔야 합니다. <br>
 경로는 
-caffe+<br>
-     |bin<br>
-     |tool<br>
+>caffe+<br>
+     >>|bin<br>
+     >>|tool<br>
 <br>
 bin 폴더 안에 예제용 bat 파일이 두개 있습니다. 그것을 참고 하시면 사용법을 확인 하실수 있습니다. 
 
