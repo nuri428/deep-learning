@@ -1,44 +1,71 @@
-#À©µµ¿ì¿¡¼­ Theano ¼³Ä¡ ÇÏ±â 
+#ìœˆë„ìš°ì—ì„œ Theano ì„¤ì¹˜ í•˜ê¸° 
  
  
-##1. python ¼³Ä¡ ÇÏ±â    
-Theano¸¦ À§ÇØ¼­´Â pyCuda¿Í °°Àº ¶óÀÌºê·¯¸®¸¦ ÄÄÆÄÀÏ ÇØ¾ß ÇÏ±â ¶§¹®¿¡    ÀÏ¹İÀûÀÎ PythonÀÌ ¾Æ´Ï¶ó    WinPythonÀÌ¶ó´Â ÆĞÅ°Áö·Î ¼³Ä¡.    ÀÌ ÆĞÅ°ÁöÀÇ ÀåÁ¡Àº ÄÄÆÄÀÏ ÇÏ±â À§ÇÑ ¼³Á¤ÀÌ ÁØºñ µÇ¾î ÀÖ´Ù´Â°Í.(À¥¿¡¼­ ±×·¸°Ô ¸»ÇÏ´Ï ¹¹ ^^)   ´Ù¿î·Îµå À§Ä¡ : http://winpython.sourceforge.net/
+##1. python ì„¤ì¹˜ í•˜ê¸°    
+Theanoë¥¼ ìœ„í•´ì„œëŠ” pyCudaì™€ ê°™ì€ ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ì»´íŒŒì¼ í•´ì•¼ í•˜ê¸° ë•Œë¬¸ì—ì¼ë°˜ì ì¸ Pythonì´ ì•„ë‹ˆë¼
+WinPythonì´ë¼ëŠ” íŒ¨í‚¤ì§€ë¡œ ì„¤ì¹˜.    
+ì´ íŒ¨í‚¤ì§€ì˜ ì¥ì ì€ ì»´íŒŒì¼ í•˜ê¸° ìœ„í•œ ì„¤ì •ì´ ì¤€ë¹„ ë˜ì–´ ìˆë‹¤ëŠ”ê²ƒ.(ì›¹ì—ì„œ ê·¸ë ‡ê²Œ ë§í•˜ë‹ˆ ë­ ^^)   
+ë‹¤ìš´ë¡œë“œ ìœ„ì¹˜ : http://winpython.sourceforge.net/
  
  
-##2. CUDA ¼³Ä¡  
-NVIDIA¿¡¼­ CUDA ÅøÅ¶À» ´Ù¿î·Îµå ¹Ş¾Æ¼­ ¼³Ä¡.   °¡Àå ÃÖ±Ù ¹öÁ¯ : 7.0 ¹öÁ¯   ¼³Ä¡½Ã µå¶óÀÌºê°¡ Á¦´ë·Î ¼³Á¤ ¾ÈµÇ¾î ÀÖ¾î¼­ ¹¹ ¾îÂ¼°í ÀúÂ¼°í ¸Ş¼¼Áö ³ª¿È  °¡º±°Ô ¹«½ÃÇÏ°í ¼³Ä¡.   PATH¿¡¼­ CUDA °æ·Î Ãß°¡. 
+##2. CUDA ì„¤ì¹˜  
+NVIDIAì—ì„œ CUDA íˆ´í‚·ì„ ë‹¤ìš´ë¡œë“œ ë°›ì•„ì„œ ì„¤ì¹˜.   
+ 7.0 ë²„ì ¼   ì„¤ì¹˜ì‹œ ë“œë¼ì´ë¸Œê°€ ì œëŒ€ë¡œ ì„¤ì • ì•ˆë˜ì–´ ìˆì–´ì„œ ë­ ì–´ì©Œê³  ì €ì©Œê³  ë©”ì„¸ì§€ ë‚˜ì˜´  ê°€ë³ê²Œ ë¬´ì‹œí•˜ê³  ì„¤ì¹˜.   
+ PATHì—ì„œ CUDA ê²½ë¡œ ì¶”ê°€. 
  
  
  
-##3. Visual Studio ¼³Ä¡   
-python ÆĞÅ°Áö ¼³Ä¡¸¦ À§ÇØ¼­´Â visual Studio³ª MinGW °°Àº ÄÄÆÄÀÏ·¯°¡ ÇÊ¿äÇÏ³ª...  Visual Studion 2012¸¦ ¼³Ä¡.   MS È¨ÆäÀÌÁö Visual Studio 2012 Express ¹öÁ¯À» ¼³Ä¡. 
+##3. Visual Studio ì„¤ì¹˜   
+python íŒ¨í‚¤ì§€ ì„¤ì¹˜ë¥¼ ìœ„í•´ì„œëŠ” visual Studioë‚˜ MinGW ê°™ì€ ì»´íŒŒì¼ëŸ¬ê°€ í•„ìš”í•˜ë‚˜...  
+Visual Studion 2012ë¥¼ ì„¤ì¹˜.   
+MS í™ˆí˜ì´ì§€ Visual Studio 2012 Express ë²„ì ¼ì„ ì„¤ì¹˜. 
  
  
-##4. Visual Studio ÀÏºÎ ¼öÁ¤.    
-C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin µğ·ºÅä¸® ¹Ø¿¡    x86_amd64 µğ·ºÅä¸®¸¦ º¹»ç amd64·Î ÀÌ¸§ ¹Ù²Ş.   vcvarsx86_amd64.bat ÆÄÀÏ¸íÀ» vcvarsx86_amd64.bat·Î ¼öÁ¤. 
+##4. Visual Studio ì¼ë¶€ ìˆ˜ì •.    
+C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin ë””ë ‰í† ë¦¬ ë°‘ì— x86_amd64 ë””ë ‰í† ë¦¬ë¥¼ ë³µì‚¬ amd64ë¡œ ì´ë¦„ ë°”ê¿ˆ.   vcvarsx86_amd64.bat íŒŒì¼ëª…ì„ vcvarsx86_amd64.batë¡œ ìˆ˜ì •. 
+
+##5. boostë¼ì´ë¸ŒëŸ¬ë¦¬ ì„¤ì¹˜ 
+cuda ë° pycudaì—ì„œ ì¼ë¶€ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì— í•„ìˆ˜ì ìœ¼ë¡œ ì„¤ì¹˜ 
+[boost](http://www.boost.org/)ì—ì„œ ìµœê·¼ ë²„ì ¼ì„ ë‹¤ìš´ë¡œë“œ ë°›ê³  ì„¤ì¹˜ 
+###ì„¤ì¹˜ ê³¼ì • 
+ì„ì˜ì˜ ê²½ë¡œì— íŒŒì¼ì„ í’€ê³  "bootstrap.bat"íŒŒì¼ ì‹¤í–‰ 
+ë¹„ì£¼ì–¼ ìŠ¤íŠœë””ì˜¤ê°€ ì •ìƒì ìœ¼ë¡œ ì„¤ì¹˜ ë˜ì—ˆë‹¤ë©´ "b2.exe"íŒŒì¼ ìƒì„±
+"b2.exe"íŒŒì¼ì„ ì‹¤í–‰ì‹œí‚¤ë©´ boostì •ìƒ ì„¤ì¹˜ 
+[ë¶€ìŠ¤íŠ¸ í™ˆí˜ì´ì§€](http://www.boost.org/doc/libs/1_55_0/more/getting_started/windows.html)ì°¸ê³ 
+ 
+##6. MinGW ì„¤ì¹˜   
+ì»´íŒŒì¼ì„ ìœ„í•´ ì„¤ì¹˜    ì•„ë˜ urlì—ì„œ ë‹¤ìš´ë¡œë“œ    http://sourceforge.net/projects/mingw-w64/   ì²¨ë¶€í•œ [MSYS-20111123.zip](http://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/MSYS%20%2832-bit%29/MSYS-20111123.zip/download)íŒŒì¼ì„ ë‹¤ìš´ë¡œë“œ ë°›ê³  ì„¤ì¹˜ëœ ê²½ë¡œì— ì••ì¶• í•´ì¬    
+msys ë””ë ‰í† ë¦¬ ì•ˆì—    
+msys.bat ìµœìƒë‹¨ì—    
+call â€œc:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\vcvarsx86_amd64.batâ€   ë¼ì¸ ì¶”ê°€.
+@echo Off ë¼ì¸ ë°”ë¡œ ì•„ë˜ì— ë‹¤ìŒ ë¼ì¸ ì¶”ê°€.    
+set HOME=%USERPROFILE%
+
+ìœ„ì™€ ê°™ì€ ë‚´ìš©ì„ ì ìš©í›„ msys.bat ì‹¤í–‰
+ì»¤ë§¨ë“œ ë¼ì¸ì´ ëœ¨ë©´ 
+"sh /postinstall/pi.sh" ëª…ë ¹ ì‹¤í–‰ 
+mingwê°€ ì„¤ì¹˜ ë˜ì—ˆëŠ”ì§€ ë¬¼ì–´ë³´ê³ , 
+ì„¤ì¹˜ ê²½ë¡œë¥¼ ì„¤ì •í•˜ë¼ê³  í•¨.
+
+##7. pycuda ì„¤ì¹˜ 
+pip install pycudaë¡œ ì„¤ì¹˜ 
+boostê°€ ì„¤ì¹˜ ì•ˆë˜ì–´ ìˆì„ ê²½ìš° ì„¤ì¹˜ ì˜¤ë¥˜ ë°œìƒ. -> boost ì„¤ì¹˜ 
+ì»´íŒŒì¼ëŸ¬ ê²½ë¡œ ì˜¤ë¥˜ì‹œ ì˜¤ë¥˜ ë°œìƒ -> 6ë²ˆ í•­ëª©ì—ì„œ mingw ì„¤ì¹˜ ê²½ë¡œ ì…ë ¥ ë¶€ë¶„ ìˆ˜ì • 
+
+##8. Theano ì„¤ì¹˜    
+pip install Theanoë¡œ ì„¤ì¹˜ 
+ 
+##9. Theano í™˜ê²½ ë³€ìˆ˜ ì„¤ì •    
+c:\User\ì‚¬ìš©ìëª…\.theanorc.txt íŒŒì¼ ì„¤ì •  [gcc] íƒ­ì—   cxxflags = -shared -I[MinGW ë””ë ‰í† ë¦¬]\include -L[íŒŒì´ì¬ ë””ë ‰í† ë¦¬]\libs -lpython34 -DMS_WIN64  ì™¸ì™€ ê°™ì´ ì„¤ì • 
  
  
-##5. MinGW ¼³Ä¡   
-ÄÄÆÄÀÏÀ» À§ÇØ ¼³Ä¡    ¾Æ·¡ url¿¡¼­ ´Ù¿î·Îµå    http://sourceforge.net/projects/mingw-w64/   Ã·ºÎÇÑ MSYS-20111123.zipÆÄÀÏÀ» ´Ù¿î·Îµå ¹Ş°í ¼³Ä¡µÈ °æ·Î¿¡ ¾ĞÃà ÇØÀç    msys µğ·ºÅä¸® ¾È¿¡    msys.bat ÃÖ»ó´Ü¿¡    call ¡°c:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\vcvarsx86_amd64.bat¡±   ¶óÀÎ Ãß°¡.       @echo Off ¶óÀÎ ¹Ù·Î ¾Æ·¡¿¡ ´ÙÀ½ ¶óÀÎ Ãß°¡.    set HOME=%USERPROFILE%
- 
- 
-##6. Theano ¼³Ä¡    
-pip install Theano·Î ¼³Ä¡ 
- 
- 
-##7. Theano È¯°æ º¯¼ö ¼³Á¤    
-c:\User\»ç¿ëÀÚ¸í\.theanorc.txt ÆÄÀÏ ¼³Á¤  [gcc] ÅÇ¿¡   cxxflags = -shared -I[MinGW µğ·ºÅä¸®]\include -L[ÆÄÀÌ½ã µğ·ºÅä¸®]\libs -lpython34 -DMS_WIN64  ¿Ü¿Í °°ÀÌ ¼³Á¤ 
- 
- 
-##8. Theano ¼³Á¤    
-ipython ¿¡¼­      import theano     theano.test() 
+##10. Theano ì„¤ì •    
+ipython ì—ì„œ      import theano     theano.test() 
  
    python -c "import theano;theano.test()"
  
-   À§¿Í °°Àº ÄÚµå°¡ Á¤»ó µ¿ÀÛ µÇ¸é ¿ÀÄÉÀÌ. 
+   ìœ„ì™€ ê°™ì€ ì½”ë“œê°€ ì •ìƒ ë™ì‘ ë˜ë©´ ì˜¤ì¼€ì´. 
  
  
-Âü°í »çÀÌÆ® http://rosinality.ncity.net/doku.php?id=python:installing_theano
- 
- 
-ÀÌ »çÀÌÆ®ÀÇ 5¹ø Ç×¸ñÀº winPythonÀ» ¼³Ä¡ÇÏ¸é ±»ÀÌ ÇÒ ÇÊ¿ä ¾øÀ½. 
+[ì°¸ê³  ì‚¬ì´íŠ¸](http://rosinality.ncity.net/doku.php?id=python:installing_theano)
+ì£¼ winpythonì„ ì´ìš©í•  ê²½ìš° ì°¸ê³  ì‚¬ì´íŠ¸ì— ì íŒ 5ë²ˆ í•­ëª©ì€ êµ³ì´ í•  í•„ìš” ì—†ìŒ. 
