@@ -1,70 +1,71 @@
-#Theano ¼³Ä¡ °ü·Ã ÀÚ·á
-À©µµ¿ì µû·Î [ÀÌ°÷](https://github.com/jaeho-kang/deep-learning/blob/master/Theano/%EC%84%A4%EC%B9%98/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%97%90%EC%84%9C%20Theano%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0.md)À» ÅëÇØ È®ÀÎ<br>
+#Theano ì„¤ì¹˜
+ì´ê³³ì˜ ìë£ŒëŠ” [Theano Install guide](http://deeplearning.net/software/theano/install.html#install)ì—ì„œ ì¼ë¶€ ë°œì·Œí•œ ë‚´ìš©ì„ì„ ë°í™ë‹ˆë‹¤.
+#Theano ì„¤ì¹˜ ê´€ë ¨ ìë£Œ
+[ìœˆë„ìš°](https://github.com/jaeho-kang/deep-learning/blob/master/Theano/%EC%84%A4%EC%B9%98/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%97%90%EC%84%9C%20Theano%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0.md)<br>
 [CentOS6](http://deeplearning.net/software/theano/install_centos6.html#install-centos6)<br>
 [Ubuntu](http://deeplearning.net/software/theano/install_ubuntu.html#install-ubuntu)<br>
 [Gentoo](http://groups.google.com/d/msg/theano-dev/-8WCMn2FMR0/bJPasoZXaqoJ)<br>
-[¿ø¹®](http://deeplearning.net/software/theano/install.html#install)
 
-#pythonÀ¸·Î Theano ¼³Ä¡ ±âº» 
+#pythonìœ¼ë¡œ Theano ì„¤ì¹˜ ê¸°ë³¸ 
 
 >pip install Thaeno 
 
-#Python ¾÷µ¥ÀÌÆ® 
+#Python ì—…ë°ì´íŠ¸ 
 
 >pip install --upgrade thaeno<br>
-À§ ¸í·ÉÀº °ü·Ã ¶óÀÌºê·¯¸® ¶ÇÇÑ °°ÀÌ ¾÷µ¥ÀÌÆ®
+ìœ„ ëª…ë ¹ì€ ê´€ë ¨ ë¼ì´ë¸ŒëŸ¬ë¦¬ ë˜í•œ ê°™ì´ ì—…ë°ì´íŠ¸
 
 >pip install --upgrade --no-deps theano<br>
-À§ ¸í·ÉÀº Theano ¶óÀÌºê·¯¸®¸¸ ¾÷µ¥ÀÌÆ®<br>
-scipy, numpy ¶óÀÌºê·¯¸® ¹öÁ¯¿¡¼­ Ãæµ¹ÀÌ »ı±æ¼öµµ ÀÖÀ½.
+ìœ„ ëª…ë ¹ì€ Theano ë¼ì´ë¸ŒëŸ¬ë¦¬ë§Œ ì—…ë°ì´íŠ¸<br>
+scipy, numpy ë¼ì´ë¸ŒëŸ¬ë¦¬ ë²„ì ¼ì—ì„œ ì¶©ëŒì´ ìƒê¸¸ìˆ˜ë„ ìˆìŒ.
 <br><br>
-scipy, numpy ¶óÀÌºê·¯¸®¿¡¼­ Ãæµ¹ÀÌ ¹ß»ıÀÌ ÇÏ´Â°ÍÀº <br>
-±âÁ¸¿¡ ¼³Ä¡µÈ Theano¶óÀÌºê·¯¸® Ä³½Ã¿Í ÀÌ¹Ì ¼³Ä¡µÈ ¶óÀÌºê·¯¸®°¡ Ãæµ¹ÇÏ´Â °æ¿ì°¡ ÀÖÀ½ <br>
-ÀÌ¸¦ À§ÇØ Theano ¶óÀÌºê·¯¸®¸¦ ´ÙÀ½°ú °°Àº ¸í·ÉÀ¸·Î Á¤¸®<br>
-¿ø¹® <br>
->>If you installed NumPy/SciPy with yum/apt-get, updating NumPy/SciPy with pip/easy_install is not always a good idea. This can make Theano crash due to problems with BLAS (but see below). The versions of NumPy/SciPy in the distribution are sometimes linked against faster versions of BLAS. Installing NumPy/SciPy with yum/apt-get/pip/easy_install won¡¯t install the development package needed to recompile it with the fast version. This mean that if you don¡¯t install the development packages manually, when you recompile the updated NumPy/SciPy, it will compile with the slower version. This results in a slower Theano as well. To fix the crash, you can clear the Theano cache like this:
+scipy, numpy ë¼ì´ë¸ŒëŸ¬ë¦¬ì—ì„œ ì¶©ëŒì´ ë°œìƒì´ í•˜ëŠ”ê²ƒì€ <br>
+ê¸°ì¡´ì— ì„¤ì¹˜ëœ Theanoë¼ì´ë¸ŒëŸ¬ë¦¬ ìºì‹œì™€ ì´ë¯¸ ì„¤ì¹˜ëœ ë¼ì´ë¸ŒëŸ¬ë¦¬ê°€ ì¶©ëŒí•˜ëŠ” ê²½ìš°ê°€ ìˆìŒ <br>
+ì´ë¥¼ ìœ„í•´ Theano ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ë‹¤ìŒê³¼ ê°™ì€ ëª…ë ¹ìœ¼ë¡œ ì •ë¦¬<br>
+ì›ë¬¸ <br>
+>>If you installed NumPy/SciPy with yum/apt-get, updating NumPy/SciPy with pip/easy_install is not always a good idea. This can make Theano crash due to problems with BLAS (but see below). The versions of NumPy/SciPy in the distribution are sometimes linked against faster versions of BLAS. Installing NumPy/SciPy with yum/apt-get/pip/easy_install wonâ€™t install the development package needed to recompile it with the fast version. This mean that if you donâ€™t install the development packages manually, when you recompile the updated NumPy/SciPy, it will compile with the slower version. This results in a slower Theano as well. To fix the crash, you can clear the Theano cache like this:
 >theano-cache clear
 
-#°³¹ßÀÚ ¹öÁ¯ Theano ¼³Ä¡ ÇÏ±â 
-stable ¹öÁ¯(¾ÈÁ¤ ¹öÁ¯)ÀÌ ¾Æ´Ñ °³¹ßÀÚ ¹öÁ¯À» ¼³Ä¡ ÇÏ°íÀÚ ÇÒ¶§ ´ÙÀ½°ú °°ÀÌ ¼³Ä¡ 
+#ê°œë°œì ë²„ì ¼ Theano ì„¤ì¹˜ í•˜ê¸° 
+stable ë²„ì ¼(ì•ˆì • ë²„ì ¼)ì´ ì•„ë‹Œ ê°œë°œì ë²„ì ¼ì„ ì„¤ì¹˜ í•˜ê³ ì í• ë•Œ ë‹¤ìŒê³¼ ê°™ì´ ì„¤ì¹˜ 
 
 > pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 
-¶Ç´Â gitÀ¸·Î ÄÚµå¸¦ ´Ù¿î ¹Ş¾Æ¼­ pythonÀ» ÅëÇØ Á÷Á¢ ¼³Ä¡ °¡´É. 
->git clone git://github.com/Theano/Theano.git
+ë˜ëŠ” gitìœ¼ë¡œ ì½”ë“œë¥¼ ë‹¤ìš´ ë°›ì•„ì„œ pythonì„ í†µí•´ ì§ì ‘ ì„¤ì¹˜ ê°€ëŠ¥. 
+>git clone git://github.com/Theano/Theano.git<br>
 >cd Theano
 >python setup.py develo
 
-##ÁÖÀÇ.
-theano setup.py ¼Ò½ºÄÚµå´Â python 3.x ¹öÁ¯¿¡ ¸ÂÁö ¾ÊÀ½. 
-±âÁ¸ÀÇ python2 python3 º¯È¯±â¸¦ ÅëÇØ ¼öµ¿À¸·Î º¯È¯ ½ÃÄÑ¾ß ÇÔ. 
+##ì£¼ì˜.
+theano setup.py ì†ŒìŠ¤ì½”ë“œëŠ” python 3.x ë²„ì ¼ì— ë§ì§€ ì•ŠìŒ.<br> 
+ê¸°ì¡´ì˜ python2 python3 ë³€í™˜ê¸°ë¥¼ í†µí•´ ìˆ˜ë™ìœ¼ë¡œ ë³€í™˜ ì‹œì¼œì•¼ í•¨. 
 
-#¼³Ä¡ ¿Ï·á Å×½ºÆ® 
+#ì„¤ì¹˜ ì™„ë£Œ í…ŒìŠ¤íŠ¸ 
 >import theano
 >theano.test()<br>
-À§ÀÇ ÄÚµå¸¦ ÅëÇØ ½ÇÇà Å×½ºÆ® <br>
-##ÁÖ)
-CUDA¸¦ ÀÌ¿ëÇÒ °æ¿ì »ç¿ëÇÏ´Â ±×·¡ÇÈÄ«µå°¡ Ç¥½Ã µÇ°í <br>
-Áß°£¿¡ nvcc stdoutÀ¸·Î ½ÃÀÛÇÏ´Â ¸Ş¼¼Áö°¡ °°ÀÌ Ç¥½Ã µÇ¸é Á¤»ó<br>
-Áß°£¿¡ cuda library installed but device not found ¸Ş¼¼Áö°¡ ³ª¿À¸é <br>
-cuda¿¡¼­ Á¦°øÇÏ´Â nvcc ÆÄÀÏÀÌ ÀÖ´Â ÆĞ½º¸¦ python¿¡¼­ Á¦´ë·Î ÀÎ½Ä ¸øÇØ¼­ <br>
-³ª¿À´Â ¿¡·¯ÀÏ °æ¿ì°¡ ¸¹À½ ÀÌ·± °æ¿ì, ÆĞ½º¸¦ È®ÀÎ<br>
+ìœ„ì˜ ì½”ë“œë¥¼ í†µí•´ ì‹¤í–‰ í…ŒìŠ¤íŠ¸ <br>
+##ì£¼)
+CUDAë¥¼ ì´ìš©í•  ê²½ìš° ì‚¬ìš©í•˜ëŠ” ê·¸ë˜í”½ì¹´ë“œê°€ í‘œì‹œ ë˜ê³  <br>
+ì¤‘ê°„ì— nvcc stdoutìœ¼ë¡œ ì‹œì‘í•˜ëŠ” ë©”ì„¸ì§€ê°€ ê°™ì´ í‘œì‹œ ë˜ë©´ ì •ìƒ<br>
+ì¤‘ê°„ì— cuda library installed but device not found ë©”ì„¸ì§€ê°€ ë‚˜ì˜¤ë©´ <br>
+cudaì—ì„œ ì œê³µí•˜ëŠ” nvcc íŒŒì¼ì´ ìˆëŠ” íŒ¨ìŠ¤ë¥¼ pythonì—ì„œ ì œëŒ€ë¡œ ì¸ì‹ ëª»í•´ì„œ <br>
+ë‚˜ì˜¤ëŠ” ì—ëŸ¬ì¼ ê²½ìš°ê°€ ë§ìŒ ì´ëŸ° ê²½ìš°, íŒ¨ìŠ¤ë¥¼ í™•ì¸<br>
 
-#GPU¸¦ »ç¿ëÇÏ±â <br>
-´ÙÀ½°ú °°Àº È¯°æ º¯¼ö ¼³Á¤ÀÌ ÇÊ¿ä. 
+#GPUë¥¼ ì‚¬ìš©í•˜ê¸° <br>
+ë‹¤ìŒê³¼ ê°™ì€ í™˜ê²½ ë³€ìˆ˜ ì„¤ì •ì´ í•„ìš”. 
 >CUDA_ROOT<br>
-Theano È¯°æ ¼³Á¤ÆÄÀÏ¿¡¼­ cuda °ü·Ã ¼³Á¤ Á¤ÀÇ ÇÊ¿ä. 
+Theano í™˜ê²½ ì„¤ì •íŒŒì¼ì—ì„œ cuda ê´€ë ¨ ì„¤ì • ì •ì˜ í•„ìš”. 
 
-#Theano È¯°æ ¼³Á¤ <br>
-»ç¿ëÀÚ È¨ µğ·ºÅä¸® <br>
+#Theano í™˜ê²½ ì„¤ì • <br>
+ì‚¬ìš©ì í™ˆ ë””ë ‰í† ë¦¬ <br>
 linux : /home/username/.theanorc<br>
 windows : C:\C:\Users\username\.theanorc.txt<br>
 
-ÇØ´ç ÆÄÀÏ¿¡ ´ÙÀ½°ú °°Àº Ãß°¡ 
->>[global]
->>device = gpu
->>floatX = float32
->>[cuda]
->>root = CUDA_ROOT ÆĞ½º(ÄÄÇ»ÅÍ¸¶´Ù ´Ù¸§)
+í•´ë‹¹ íŒŒì¼ì— ë‹¤ìŒê³¼ ê°™ì€ ì¶”ê°€<br> 
+    [global]<br>
+    device = gpu<br>
+    floatX = float32<br>
+    [cuda]<br>
+    root = CUDA_ROOT íŒ¨ìŠ¤(ì»´í“¨í„°ë§ˆë‹¤ ë‹¤ë¦„)<br>
 <br>
-À§ÀÇ ÄÚµå´Â ÀúÀÚÀÇ º»ÀÎ È¯°æ(À©µµ¿ì) ¸®´ª½º ÀÏ °æ¿ì ´Ù¸¥ °æ·ÎÀÓ. 
+ìœ„ì˜ ì½”ë“œëŠ” ì €ìì˜ ë³¸ì¸ í™˜ê²½(ìœˆë„ìš°) ë¦¬ëˆ…ìŠ¤ ì¼ ê²½ìš° ë‹¤ë¥¸ ê²½ë¡œì„. 
