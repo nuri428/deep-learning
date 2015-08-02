@@ -61,10 +61,10 @@ linux : /home/username/.theanorc<br>
 windows : C:\C:\Users\username\.theanorc.txt<br>
 
 해당 파일에 다음과 같은 추가 
->[global]
->device = gpu
->floatX = float32
->[cuda]
->root = CUDA_ROOT 패스(컴퓨터마다 다름)
+>>[global]
+>>device = gpu
+>>floatX = float32
+>>[cuda]
+>>root = CUDA_ROOT 패스(컴퓨터마다 다름)
 <br>
 위의 코드는 저자의 본인 환경(윈도우) 리눅스 일 경우 다른 경로임. 
