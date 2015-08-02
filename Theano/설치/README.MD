@@ -62,8 +62,13 @@ linux : /home/username/.theanorc
 windows : C:\C:\Users\username\.theanorc.txt
 
 해당 파일에 다음과 같은 추가 
+>[global]
+>device = gpu
+>floatX = float32
 >[cuda]
->root =C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.0
+>root = CUDA_ROOT 패스(컴퓨터마다 다름)
+
 위의 코드는 저자의 본인 환경(윈도우) 리눅스 일 경우 다른 경로임. 
+
 
 
