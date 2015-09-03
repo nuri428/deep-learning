@@ -4,7 +4,7 @@ Caffe는 Theano랑은 다른 Deep learning 라이브러리 입니다.
 
 이 라이브러리를 설치하고 난후 pyCaffe를 설치하면 python을 통해 사용할 수 있습니다. 
 
-설치하기 위해서는 다음과 같은 라이브러리가 필요로 합니다. 
+설치하기 위해서는 다음과 같은 라이브러리가 필요로 합니다.  
 
 Caffe has several dependencies.
 CUDA is required for GPU mode.
