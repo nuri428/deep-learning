@@ -217,5 +217,74 @@ hybrid-symbolic과 non-symbolic 변수가  여러개의 function에서 shared(�
 그것은 Shared variable(공유변수)라 부른다. 왜냐하면 이 변수의 값은 많은 functions사이에서 공유된다. 
 이 Shared variable(공유변수)는 .get_value()메소드를 통해 접근 가능하고, .set_value() 메소드를 통해 수정가능핟. 
 
-이 코드에서 새로운 코드는 functions의 updates 인자 function.updates 이것은 이다. 
+이 코드에서 새로운 코드는 functions의 updates 인자 function.updates는 반드시 리스트 쌍을 지원해야 한다.(공유변수, 새로운 변수) 
+
+it can also be a dictionary whose keys are shared-variableds and values are the new expressions
+그것은 키와  공유 변수 그리고 변수들로 구성된 새로운 표현식으로 사전과 같아 진다. 
+
+Eitger way. it means "wherevever this function runs, it will replace the .value of each shared variable with the result of the corresponding expression". 
+
+같은 방법으로 그것은 다음을 의미한다. " 언제든 이 function이 수행 될때, 그것은 .value를 각각의 올바른 표현의 결과로서 공유 변수로 대체 한다."
+
+Above, our accumulator replaces the state's value with the sum of the state and increment amount. 
+위의 예에서 우리의 덧셈기(accumulator)는  상태의 변수를 상태와 더해진 결과로 대체한다.  
+
+다음과 같은 예제를 보면 테스트 해보자. 
+
+
+> state.get_value()
+<br>array(0)
+> <br>accumulator(1)
+<br>array(0)
+> <br>state.get_value()
+<br>array(1)
+> <br>accumulator(300)
+<br>array(1)
+> <br>state.get_value()
+<br>array(301)
  
+ set_value() 메소드를 통해 상태를 재설정 하는것도 가능하다. 
+ >state.set_value(-1)
+ <br>accumulator(3)
+ <br>array(-1)
+ <br>>state.get_value()
+ <br>array(2)
+ 
+
+ As we mentioned above, you define more than one function to use the same shared variable. These functions can all update the value. 
+ <br>위에서 언급했듯이, 당신은 여러개의 function에서 같은 공유 변수를 정의 할 수 있다. 그 function들은 모두 값을 갱신(update)할 수 있다. 
+ >decrementor = function([inc], state, updates=[(state, state-inc)])
+ <br>decrementor(2)
+ <br>>array(2)
+ <br>state.get_valye()
+ <br>>array(0)
+ 
+ You might be wondering why updates mechanism exists.
+ You can always achieve a similar result by returning the new expressions, and working with them in NumPy as usual. 
+ The updates mechnism can be a syntactic convenience, but it is mainly there for efficiency. Updates to shared variabled can sometimes be done more quickly using in-place algorithm. (e.g. low-rank matrix updates). Also, Theano has more control over where and how shared variables are allocated, which is one of the important elements of getting good performatce on GPU.
+ <br>
+ It may happen that you expressed some formula using a shared variable, but you do not want to use its value. In this case, you can use the givens parameter of function which replace a particular node in a graph for the purpose of one particular function.
+ <br>
+ <br>
+ update 메카니즘이에 대해서 주의하라. 당신은 또한 새로운 표현법을 통해서 쉽게 결과를 가져올수 있다. 그리고, 그러한것을 NumPy를 이용해서도 같은 방법으로 사용할 수 있다. update 매커니즘은 문법적인 변환이 가능하다. 그러나 그것은 효율적이지 않다. 공유 변수의 갱신은 때때로 내부 알고리즘보다 빨리 이루어 질 수 있다. (예를 들면 low-rank matrix 갱신과 같은(?)). 또한, Theano 공유 변수가 어디에 있는지 그리고 어떻게 공유 변수를 할당 하는 방법을 제공한다. 그것은 GPU를 이용한 좋은 성능을 가져오는 중요한 요소중 하나이다. 
+<br>
+공유 변수를 이용하여 일부 식을 표현하고, 변수처럼 사용하지 않을 수 있다. 이 경우, 하나의 특정 function의 목적 그래프에 특정노드를 대체함수의 주어진 매개변수를 사용할 수 있다.  
+ 
+`
+fn_of_state = state * 2 + inc<br>
+#The type of foo must match the shared variable we are replacing<br>
+# with the ``givens``<br>
+foo = T.scalar(dtype=state.dtype)<br>
+skip_shared = function([inc, foo], fn_of_state,
+                           givens=[(state, foo)])<br>
+skip_shared(1, 3)  # we're using 3 for the state, not state.value<br>
+array(7)<br>
+state.get_value()  # old state still there, but we didn't use it<br>
+array(0)
+`
+
+<br>
+The givens parameter can be used to replace any symbolic variable, not just a shared variable. You can replace constants, and expressions, in general. Be careful though, not to allow the expressions introduced by a givens substitution to be co-dependent, the order of substitution is not defined, so the substitutions have to work in any order. <br>
+In practice, a good way of thinking about the givens is as a mechanism that allows you to replace any part of your formula with a different expression that evaluates to a tensor of same shape and dtype.
+<br>
+<br>
