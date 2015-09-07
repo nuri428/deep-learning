@@ -1,0 +1,41 @@
+윈도우에서 파이선 패키지를 설치하는 방법이 좀 어렵습니다. 
+
+무엇보다 컴파일러가 있어야하고 설정이 이것 저것 좀 복잡한데요 
+
+이미 컴파일된 바이너리를 배포하고 그걸 통해 패키지를 쉽게 설치 할 수있는 방법을 찾아서 공유 합니다. 
+
+http://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+이 링크에 들어가시면 whl이라는 패키지를 배포하고 있고요 
+
+파일명은 
+
+패키지명 cp 파이선 버젼-win32.whl 또는 
+패키지명 cp 파이선 버젼-amd64.whl 입니다. 
+
+scipy를 들어 설명 드리면, scipy는 다음과 같이 나열 되어 있고요 
+SciPy is software for mathematics, science, and engineering.
+Requires numpy+mkl and optionally pillow.
+scipy‑0.16.0‑cp26‑none‑win32.whl
+scipy‑0.16.0‑cp26‑none‑win_amd64.whl
+scipy‑0.16.0‑cp27‑none‑win32.whl
+scipy‑0.16.0‑cp27‑none‑win_amd64.whl
+scipy‑0.16.0‑cp33‑none‑win32.whl
+scipy‑0.16.0‑cp33‑none‑win_amd64.whl
+scipy‑0.16.0‑cp34‑none‑win32.whl
+scipy‑0.16.0‑cp34‑none‑win_amd64.whl
+
+제일 위는 scipy 0.16, python 2.6 win32 패키지라는 의미입니다. 
+그 다음은 scipy 0.16, python 2.6 amd64(win64) 패키지를 의미 합니다. 
+
+전 파이선 2.7에 win64가 필요해서 "scipy‑0.16.0‑cp27‑none‑win_amd64.whl"을 다운로드 받아서 설치 했습니다. 
+
+버젼에 맞는 파일을 다운 로드 받아서 설치 하시면 간단히 해결 됩니다. 
+
+설치 하는 방법은 
+
+"pip install foo.whl" 입니다. 
+
+아래 링크를 참고 하시면 더 자세한 내용을 알 수 있습니다. 
+
+https://pip.pypa.io/en/latest/user_guide.html#installing-from-wheels
