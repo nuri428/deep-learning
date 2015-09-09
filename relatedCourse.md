@@ -19,4 +19,5 @@
 [caffe](http://caffe.berkeleyvision.org/)<br>
 [Digits](https://developer.nvidia.com/digits)<br>
 [Torch](http://torch.ch/)<br>
+[dl4j](http://deeplearning4j.org/)<br>
 
