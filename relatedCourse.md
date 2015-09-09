@@ -9,6 +9,14 @@
 
 #한국
 [딥큐넷](http://deepcumen.com)
+[Torch7시작하기](http://roboticist.tistory.com/553)<br>
 
 ##라이브러리
-[Torch7시작하기](http://roboticist.tistory.com/553)
+
+[Theano](http://deeplearning.net/)<br>
+>[keras](http://keras.io)<bR>
+
+[caffe](http://caffe.berkeleyvision.org/)<br>
+[Digits](https://developer.nvidia.com/digits)<br>
+[Torch](http://torch.ch/)<br>
+
