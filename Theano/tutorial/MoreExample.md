@@ -110,9 +110,7 @@ Param 클래스를 이용하여 function의 입력 파라메터를 정의 할 �
 
 기본값으로 다수의 input을 사용 할 수 있다.
 
-인풋 파라메터들은 일반적인 파이선과 같이 이름으로 포지션을 지정할수 있다.
-
- 
+인풋 파라메터들은 일반적인 파이선과 같이 이름으로 위치를 지정할수 있다.
 
 	x, y, w = T.dscalars('x', 'y', 'w')
 	z = (x + y) * w
@@ -164,15 +162,11 @@ function 내부 상태를 만들수 있다.
 
 그것은 인자를 내부 상태에 더한다, 그리고 이전 상태를 반환한다.
 
- 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from theano import shared
-state = shared(0)
-inc = T.iscalar('inc')
-accumulator = function([inc], state, updates=[(state, state+inc)])
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+	from theano import shared
+	state = shared(0)
+	inc = T.iscalar('inc')
+	accumulator = function([inc], state, updates=[(state, state+inc)])
  
 
 이 코드는 몇가지 컨셉을 소개하고 있다.
@@ -202,32 +196,34 @@ Above, our accumulator replaces the state's value with the sum of the state and 
 다음과 같은 예제를 보면 테스트 해보자. 
 
 
-> state.get_value()
-<br>array(0)
-> <br>accumulator(1)
-<br>array(0)
-> <br>state.get_value()
-<br>array(1)
-> <br>accumulator(300)
-<br>array(1)
-> <br>state.get_value()
-<br>array(301)
+	state.get_value()
+	>array(0)
+	accumulator(1)
+	>array(0)
+	state.get_value()
+	>array(1)
+	accumulator(300)
+	>array(1)
+	state.get_value()
+	>array(301)
  
  set_value() 메소드를 통해 상태를 재설정 하는것도 가능하다. 
- >state.set_value(-1)
- <br>accumulator(3)
- <br>array(-1)
- <br>>state.get_value()
- <br>array(2)
+ 
+	state.set_value(-1)
+	accumulator(3)
+	>array(-1)
+	state.get_value()
+	>array(2)
  
 
  As we mentioned above, you define more than one function to use the same shared variable. These functions can all update the value. 
  <br>위에서 언급했듯이, 당신은 여러개의 function에서 같은 공유 변수를 정의 할 수 있다. 그 function들은 모두 값을 갱신(update)할 수 있다. 
- >decrementor = function([inc], state, updates=[(state, state-inc)])
- <br>decrementor(2)
- <br>>array(2)
- <br>state.get_valye()
- <br>>array(0)
+ 
+	decrementor = function([inc], state, updates=[(state, state-inc)])
+	decrementor(2)
+	>array(2)
+	state.get_valye()
+	>array(0)
  
  You might be wondering why updates mechanism exists.
  You can always achieve a similar result by returning the new expressions, and working with them in NumPy as usual. 
@@ -236,7 +232,8 @@ Above, our accumulator replaces the state's value with the sum of the state and 
  It may happen that you expressed some formula using a shared variable, but you do not want to use its value. In this case, you can use the givens parameter of function which replace a particular node in a graph for the purpose of one particular function.
  <br>
  <br>
- update 메카니즘이에 대해서 주의하라. 당신은 또한 새로운 표현법을 통해서 쉽게 결과를 가져올수 있다. 그리고, 그러한것을 NumPy를 이용해서도 같은 방법으로 사용할 수 있다. update 매커니즘은 문법적인 변환이 가능하다. 그러나 그것은 효율적이지 않다. 공유 변수의 갱신은 때때로 내부 알고리즘보다 빨리 이루어 질 수 있다. (예를 들면 low-rank matrix 갱신과 같은(?)). 또한, Theano 공유 변수가 어디에 있는지 그리고 어떻게 공유 변수를 할당 하는 방법을 제공한다. 그것은 GPU를 이용한 좋은 성능을 가져오는 중요한 요소중 하나이다. 
+ Update 매커니즘이 존재하는 이유가 궁금할 것이다. 당신은 또한 새로운 표현법을 통해서 쉽게 결과를 가져올수 있다. 그리고, 그러한것을 NumPy를 이용해서도 같은 방법으로 사용할 수 있다. 
+ Update 매커니즘은 문법적인 변환이 가능하다. 그러나 그것은 효율적이지 않다. 공유 변수의 갱신은 때때로 내부 알고리즘보다 빨리 이루어 질 수 있다. (예를 들면 low-rank matrix 갱신과 같은(?)). 또한, Theano 공유 변수가 어디에 있는지 그리고 어떻게 공유 변수를 할당 하는 방법을 제공한다. 그것은 GPU를 이용한 좋은 성능을 가져오는 중요한 요소중 하나이다. 
 <br>
 공유 변수를 이용하여 일부 식을 표현하고, 변수처럼 사용하지 않을 수 있다. 이 경우, 하나의 특정 function의 목적 그래프에 특정노드를 대체함수의 주어진 매개변수를 사용할 수 있다.  
  
@@ -269,18 +266,32 @@ Using Random Numbers
 Because in Theano you first express everything symbolically and afterwards compile this expression to get functions, using pseudo-random numbers is not as straightforward as it is in NumPy, though also not too complicated.
 The way to think about putting randomness into Theano’s computations is to put random variables in your graph. Theano will allocate a NumPy RandomStream object (a random number generator) for each such variable, and draw from it as necessary. We will call this sort of sequence of random numbers a random stream. Random streams are at their core shared variables, so the observations on shared variables hold here as well. Theanos’s random objects are defined and implemented in RandomStreams and, at a lower level, in RandomStreamsBase.
 
-## Bried Example
+## Brief Example
 --------------------------
 	from theano.tensor.shared_randomstreams import RandomStreams
 	from theano import function
 	srng = RandomStreams(seed=234)
-	rv_u = srng.uniform((2,2))
-	rv_n = srng.normal((2,2))
+	rv_u = srng.uniform((2,2)) #균등분포[2,2]
+	rv_n = srng.normal((2,2))  #정규분포 avg, std
 	f = function([], rv_u)
 	g = function([], rv_n, no_default_updates=True)    	#Not updating rv_n.rng
 	nearly_zeros = function([], rv_u + rv_u - 2 * rv_u)
 	
-Here, ‘rv_u’ represents a random stream of 2x2 matrices of draws from a uniform distribution. Likewise, ‘rv_n’ represents a random stream of 2x2 matrices of draws from a normal distribution. The distributions that are implemented are defined in RandomStreams and, at a lower level, in raw_random. They only work on CPU. See Other Implementations for GPU version.
+	
+uniform() [균등분포](https://ko.wikipedia.org/wiki/%EC%97%B0%EC%86%8D%EA%B7%A0%EB%93%B1%EB%B6%84%ED%8F%AC)<br>
+normal() [정규분포](https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C%EB%B6%84%ED%8F%AC) 
+	
+	uniform(self, size=(), low=0.0, high=1.0, ndim=None):
+	Sample a tensor of the given size whose elements come from a uniform distribution between low and high.
+	If size is ambiguous on the number of dimensions, ndim may be a plain integer to supplement the missing information.
+	This wraps the numpy implementation, so it has the same bounds: [low, high].
+	normal(self, size=(), avg=0.0, std=1.0, ndim=None):
+	Sample from a normal distribution centered on avg with the specified standard deviation (std)
+	If size is ambiguous on the number of dimensions, ndim may be a plain integer to supplement the missing information.
+	This wrap numpy implementation, so it have the same behavior.
+	
+
+Here, ‘rv\_u’ represents a random stream of 2x2 matrices of draws from a uniform distribution. Likewise, ‘rv\_n’ represents a random stream of 2x2 matrices of draws from a normal distribution. The distributions that are implemented are defined in RandomStreams and, at a lower level, in raw_random. They only work on CPU. See Other Implementations for GPU version.
 Now let’s use these objects. If we call f(), we get random uniform numbers. The internal state of the random number generator is automatically updated, so we get different random numbers every time.
 
 	f_val0 = f()
