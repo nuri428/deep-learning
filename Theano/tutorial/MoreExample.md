@@ -215,7 +215,7 @@ hybrid-symbolic과 non-symbolic 변수가  여러개의 function에서 shared(�
 그러나 그들 또한 내부적인 값을 가질수 있으며 그것들은  그 값들이 이러한 심볼릭 변수를  모든  function에서 그렇게 정의 할수 있음을 정의 한다.
 
 그것은 Shared variable(공유변수)라 부른다. 왜냐하면 이 변수의 값은 많은 functions사이에서 공유된다. 
-이 Shared variable(공유변수)는 .get_value()메소드를 통해 접근 가능하고, .set_value() 메소드를 통해 수정가능핟. 
+이 Shared variable(공유변수)는 .get_value()메소드를 통해 접근 가능하고, .set_value() 메소드를 통해 수정가능하다. 
 
 이 코드에서 새로운 코드는 functions의 updates 인자 function.updates는 반드시 리스트 쌍을 지원해야 한다.(공유변수, 새로운 변수) 
 
@@ -270,21 +270,181 @@ Above, our accumulator replaces the state's value with the sum of the state and 
 <br>
 공유 변수를 이용하여 일부 식을 표현하고, 변수처럼 사용하지 않을 수 있다. 이 경우, 하나의 특정 function의 목적 그래프에 특정노드를 대체함수의 주어진 매개변수를 사용할 수 있다.  
  
-`
-fn_of_state = state * 2 + inc<br>
-#The type of foo must match the shared variable we are replacing<br>
-# with the ``givens``<br>
-foo = T.scalar(dtype=state.dtype)<br>
-skip_shared = function([inc, foo], fn_of_state,
-                           givens=[(state, foo)])<br>
-skip_shared(1, 3)  # we're using 3 for the state, not state.value<br>
-array(7)<br>
-state.get_value()  # old state still there, but we didn't use it<br>
-array(0)
-`
+	fn_of_state = state * 2 + inc
+	#The type of foo myst match the shared variable we are replaceing with the givens
+	foo = T.scalar(dtype=state.dtype)
+	skip_shared = function([inc, foo], fn_of_state,
+                           givens=[(state, foo)])
+	skip_shared(1, 3) # we skip using 3 for the state, not state.value
+	array(7)
+	state.get_value() # old state still there, byt we didn't use it
+	array(0)
+
 
 <br>
 The givens parameter can be used to replace any symbolic variable, not just a shared variable. You can replace constants, and expressions, in general. Be careful though, not to allow the expressions introduced by a givens substitution to be co-dependent, the order of substitution is not defined, so the substitutions have to work in any order. <br>
 In practice, a good way of thinking about the givens is as a mechanism that allows you to replace any part of your formula with a different expression that evaluates to a tensor of same shape and dtype.
 <br>
+주어진 파라메터는 어떠한 종류의 심볼릭 변수를 대해하여 사용할수 있지만, shared 변수로는 사용되지 못한다. 
+일반적인 변수나 혹은 상수를 대체 할수 있다. 
+조심해야 할것은, 그 표현 소개된 순서대로의 의존성이 허용되지 않는다
+대체 순서는 정의되지 않는다. , 그래서 대체는 정해지지 않는 순서로 동작한다. 
+
+사실, 좋은 방법 ----
 <br>
+
+
+Using Random Numbers
+----------------------
+Because in Theano you first express everything symbolically and afterwards compile this expression to get functions, using pseudo-random numbers is not as straightforward as it is in NumPy, though also not too complicated.
+The way to think about putting randomness into Theano’s computations is to put random variables in your graph. Theano will allocate a NumPy RandomStream object (a random number generator) for each such variable, and draw from it as necessary. We will call this sort of sequence of random numbers a random stream. Random streams are at their core shared variables, so the observations on shared variables hold here as well. Theanos’s random objects are defined and implemented in RandomStreams and, at a lower level, in RandomStreamsBase.
+
+## Bried Example
+--------------------------
+	from theano.tensor.shared_randomstreams import RandomStreams
+	from theano import function
+	srng = RandomStreams(seed=234)
+	rv_u = srng.uniform((2,2))
+	rv_n = srng.normal((2,2))
+	f = function([], rv_u)
+	g = function([], rv_n, no_default_updates=True)    	#Not updating rv_n.rng
+	nearly_zeros = function([], rv_u + rv_u - 2 * rv_u)
+	
+Here, ‘rv_u’ represents a random stream of 2x2 matrices of draws from a uniform distribution. Likewise, ‘rv_n’ represents a random stream of 2x2 matrices of draws from a normal distribution. The distributions that are implemented are defined in RandomStreams and, at a lower level, in raw_random. They only work on CPU. See Other Implementations for GPU version.
+Now let’s use these objects. If we call f(), we get random uniform numbers. The internal state of the random number generator is automatically updated, so we get different random numbers every time.
+
+	f_val0 = f()
+	f_val1 = f() # different numbers from f_val0
+
+When we add the extra argument no_default_updates=True to function (as in g), then the random number generator state is not affected by calling the returned function. So, for example, calling g multiple times will return the same numbers.
+
+	g_val0 = g() # different numbers from f_val0 and f_val1
+	g_val1 = g()	# same numbers as g_val0!
+	
+An important remark is that a random variable is drawn at most once during any single function execution. So the nearly_zeros function is guaranteed to return approximately 0 (except for rounding error) even though the rv_u random variable appears three times in the output expression.
+
+	nearly_zeros = function([], rv_u + rv_u -2 * rv_u)
+	
+##Seeding Streams
+Random variables can be seeded individually or collectively.
+You can seed just one random variable by seeding or assigning to the .rng attribute, using .rng.set_value().
+
+	rng_val = rv_u.rng.get_valye(borrow=True) # Get the rng for rv_u
+	rng_val.seed(89234) # seeds the generator
+	rv_u.rng.set_value(rng_val, borrow=True)
+	
+You can also seed all of the random variables allocated by a RandomStreams object by that object’s seed method. This seed will be used to seed a temporary random number generator, that will in turn generate seeds for each of the random variables.
+
+	srng.seed(902340) # seeds rv_u and rv_n with different seeds each
+	
+##Sharing Streams Between Functions
+As usual for shared variables, the random number generators used for random variables are common between functions. So our nearly_zeros function will update the state of the generators used in function f above.
+For example:
+
+	state_after_v0 = rv_u.rng.get_value().get_state()
+	nearly_zeros()       # this affects rv_u's generator
+	>array([[ 0.,  0.],
+       [ 0.,  0.]])
+	v1 = f()
+	rng = rv_u.rng.get_value(borrow=True)
+	rng.set_state(state_after_v0)
+	rv_u.rng.set_value(rng, borrow=True)
+	v2 = f()             # v2 != v1
+	v3 = f()             # v3 == v1
+	
+##Copying Random State Between Theano Graphs
+In some use cases, a user might want to transfer the “state” of all random number generators associated with a given theano graph (e.g. g1, with compiled function f1 below) to a second graph (e.g. g2, with function f2). This might arise for example if you are trying to initialize the state of a model, from the parameters of a pickled version of a previous model. For theano.tensor.shared_randomstreams.RandomStreams and theano.sandbox.rng_mrg.MRG_RandomStreams this can be achieved by copying elements of the state_updates parameter.
+Each time a random variable is drawn from a RandomStreams object, a tuple is added to the state_updates list. The first element is a shared variable, which represents the state of the random number generator associated with this particular variable, while the second represents the theano graph corresponding to the random number generation process (i.e. RandomFunction{uniform}.0).
+An example of how “random states” can be transferred from one theano function to another is shown below.
+
+
+	from __future__ import print_function
+	import theano
+	import numpy
+	import theano.tensor as T
+	from theano.sandbox.rng_mrg import MRG_RandomStreams
+	from theano.tensor.shared_randomstreams import RandomStreams
+	
+	>>> class Graph():
+	...     def __init__(self, seed=123):
+	...         self.rng = RandomStreams(seed)
+	...         self.y = self.rng.uniform(size=(1,))
+	
+	>>> g1 = Graph(seed=123)
+	>>> f1 = theano.function([], g1.y)
+	
+	>>> g2 = Graph(seed=987)
+	>>> f2 = theano.function([], g2.y)
+	
+	>>> # By default, the two functions are out of sync.
+	>>> f1()
+	array([ 0.72803009])
+	>>> f2()
+	array([ 0.55056769])
+	
+	>>> def copy_random_state(g1, g2):
+	...     if isinstance(g1.rng, MRG_RandomStreams):
+	...         g2.rng.rstate = g1.rng.rstate
+	...     for (su1, su2) in zip(g1.rng.state_updates, g2.rng.state_updates):
+	...         su2[0].set_value(su1[0].get_values())
+	
+	>>> # We now copy the state of the theano random number generators.
+	copy_random_state(g1, g2)
+	f1()
+	>array([ 0.59044123])
+	f2()
+	>array([ 0.59044123])
+	
+##Other Implementations
+There are 2 other implementations based on MRG31k3p and CURAND. The RandomStream only work on the CPU, MRG31k3p work on the CPU and GPU. CURAND only work on the GPU.
+
+`To use you the MRG version easily, you can just change the import to:
+from theano.sandbox.rng_mrg import MRG_RandomStreams as RandomStreams`
+
+##A Real Example : Logistic Regerssion
+	import numpy
+	import theano
+	import theano.tensor as T
+	rng = numpy.random
+
+	N = 400
+	feats = 784
+	D = (rng.randn(N, feats), rng.randint(size=N, low=0, high=2))
+	training_steps = 10000
+
+	# Declare Theano symbolic variables
+	x = T.matrix("x")
+	y = T.vector("y")
+	w = theano.shared(rng.randn(feats), name="w")
+	b = theano.shared(0., name="b")
+	print("Initial model:")
+	print(w.get_value())
+	print(b.get_value())
+
+	# Construct Theano expression graph
+	p_1 = 1 / (1 + T.exp(-T.dot(x, w) - b))   # Probability that target = 1
+	prediction = p_1 > 0.5                    # The prediction thresholded
+	xent = -y * T.log(p_1) - (1-y) * T.log(1-p_1) # Cross-entropy loss function
+	cost = xent.mean() + 0.01 * (w ** 2).sum()# The cost to minimize
+	gw, gb = T.grad(cost, [w, b])             # Compute the gradient of the cost
+                                          # (we shall return to this in a
+                                          # following section of this tutorial)
+
+	# Compile
+	train = theano.function(
+          inputs=[x,y],
+          outputs=[prediction, xent],
+          updates=((w, w - 0.1 * gw), (b, b - 0.1 * gb)))
+	predict = theano.function(inputs=[x], outputs=prediction)
+
+	# Train
+	for i in range(training_steps):
+   		pred, err = train(D[0], D[1])
+
+	print("Final model:")
+	print(w.get_value())
+	print(b.get_value())
+	print("target values for D:")
+	print(D[1])
+	print("prediction on D:")
+	print(predict(D[0]))

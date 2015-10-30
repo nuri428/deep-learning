@@ -26,6 +26,7 @@ python이라는 객체 지향 언어를 이용해서 Theano에서는 tensor라�
     x = T.dscalar('x') #float64 스칼라
     y = T.dscalar('y') #float64 스칼라
     z = x + y
+    symbolic declaration
     f = function([x, y], z) # f 라는 객체에 x,y를 더해서 결과를 반환하는 함수 객체(functor)를 정의 
 
     f(2, 3)
