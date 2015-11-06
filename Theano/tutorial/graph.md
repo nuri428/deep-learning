@@ -12,7 +12,7 @@ Theano builds internally a graph structure composed of interconnected variable n
 	z = x + y
 	
 ###Diagram
-	img src=graph-apply.png
+<img src="graph-apply.png">
 	
 Arrows in this figure represent references to the Python objects pointed at. The blue box is an Apply node. Red boxes are Variable nodes. Green circles are Ops. Purple boxes are Types.
 The graph can be traversed starting from outputs (the result of some computation) down to its inputs using the owner field. Take for example the following code:
@@ -69,3 +69,6 @@ Symbolic programming involves a change of paradigm: it will become clearer as we
 	The output file is available at ./pics/symbolic_graph_unopt.png
 	theano.printing.pydotprint(f, outfile="./pics/symbolic_graph_opt.png", var_with_name_simple=True)  
 	The output file is available at ./pics/symbolic_graph_opt.png
+	
+<img src="symbolic_graph_unopt.png">
+<img src="symbolic_graph_opt.png">	
