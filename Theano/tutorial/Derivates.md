@@ -1,6 +1,9 @@
 #Dervatives In Theano
 ##Computing Gradients
 Now let’s use Theano for a slightly more sophisticated task: create a function which computes the derivative of some expression y with respect to its parameter x. To do this we will use the macro T.grad. For instance, we can compute the gradient of x^2 with respect to x. Note that: d(x^2)/dx = 2 \cdot x.
+
+그레디언트 계산하기. 
+
 Here is the code to compute this gradient:
 
 	import theano
@@ -9,7 +12,7 @@ Here is the code to compute this gradient:
 	x = T.dscalar('x')
 	y = x ** 2
 	gy = T.grad(y, x)
-	pp(gy)  # print out the gradient prior to optimization
+	>pp(gy)  # print out the gradient prior to optimization
 	'((fill((x ** TensorConstant{2}), TensorConstant{1.0}) * TensorConstant{2}) * (x ** (TensorConstant{2} - TensorConstant{1})))'
 	f = theano.function([x], gy)
 	f(4)

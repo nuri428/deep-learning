@@ -252,17 +252,19 @@ Above, our accumulator replaces the state's value with the sum of the state and 
 The givens parameter can be used to replace any symbolic variable, not just a shared variable. You can replace constants, and expressions, in general. Be careful though, not to allow the expressions introduced by a givens substitution to be co-dependent, the order of substitution is not defined, so the substitutions have to work in any order. <br>
 In practice, a good way of thinking about the givens is as a mechanism that allows you to replace any part of your formula with a different expression that evaluates to a tensor of same shape and dtype.
 <br>
-주어진 파라메터는 어떠한 종류의 심볼릭 변수를 대해하여 사용할수 있지만, shared 변수로는 사용되지 못한다. 
-일반적인 변수나 혹은 상수를 대체 할수 있다. 
+given 옵션은 주어진 파라메터는 어떠한 종류의 심볼릭 변수를 대해 교체 할 수 있다. 그러나, shared 변수로는 사용되지 못한다. 
+일반적인 변수나 혹은 상수를 교체 할수 있다. 
 조심해야 할것은, 그 표현 소개된 순서대로의 의존성이 허용되지 않는다
 대체 순서는 정의되지 않는다. , 그래서 대체는 정해지지 않는 순서로 동작한다. 
 
-사실, 좋은 방법 ----
 <br>
 
 
 Using Random Numbers
 ----------------------
+닌수 사용하기<br>
+Theano에서 난수를 사용하기 위해서는 Numpy의 RandomStream(난수 생성기)을 이용한다. 
+
 Because in Theano you first express everything symbolically and afterwards compile this expression to get functions, using pseudo-random numbers is not as straightforward as it is in NumPy, though also not too complicated.
 The way to think about putting randomness into Theano’s computations is to put random variables in your graph. Theano will allocate a NumPy RandomStream object (a random number generator) for each such variable, and draw from it as necessary. We will call this sort of sequence of random numbers a random stream. Random streams are at their core shared variables, so the observations on shared variables hold here as well. Theanos’s random objects are defined and implemented in RandomStreams and, at a lower level, in RandomStreamsBase.
 
@@ -285,17 +287,27 @@ normal() [정규분포](https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C%EB%B6%8
 	Sample a tensor of the given size whose elements come from a uniform distribution between low and high.
 	If size is ambiguous on the number of dimensions, ndim may be a plain integer to supplement the missing information.
 	This wraps the numpy implementation, so it has the same bounds: [low, high].
+	
 	normal(self, size=(), avg=0.0, std=1.0, ndim=None):
 	Sample from a normal distribution centered on avg with the specified standard deviation (std)
 	If size is ambiguous on the number of dimensions, ndim may be a plain integer to supplement the missing information.
 	This wrap numpy implementation, so it have the same behavior.
 	
+rv\_v 는 균등분포를 기반으로한 난수를 발생하여 2*2 행렬로 만들어 반환한다. 
+분산은 RandomStram을 기반으로 구현되어 있다.
+난수 생성은 cpu 버젼과 gpu 버젼이 있다. 
+
+f()를 호출하면 난수가 발생하고 , 호출 될때마다 기본값이 갱신이 되어 f()의 결과값이 다르다. 
+이와 반대로 g()를 호출하면 이전에 발생된 난수가 그대로 유지 된다. 
+f()와 g()의 차이는 no_default_updates=True 옵션의 차이이다. 
 
 Here, ‘rv\_u’ represents a random stream of 2x2 matrices of draws from a uniform distribution. Likewise, ‘rv\_n’ represents a random stream of 2x2 matrices of draws from a normal distribution. The distributions that are implemented are defined in RandomStreams and, at a lower level, in raw_random. They only work on CPU. See Other Implementations for GPU version.
 Now let’s use these objects. If we call f(), we get random uniform numbers. The internal state of the random number generator is automatically updated, so we get different random numbers every time.
 
 	f_val0 = f()
 	f_val1 = f() # different numbers from f_val0
+
+g() 함수 정의와 같이 no_dafault_updates=True 인자를 추가하면, g()를 호출 할때 마다 이전에 발생한 난수와 같은 값을 생성한다. 
 
 When we add the extra argument no_default_updates=True to function (as in g), then the random number generator state is not affected by calling the returned function. So, for example, calling g multiple times will return the same numbers.
 
