@@ -31,3 +31,15 @@ After optimization there is only one Apply node left in the graph, which doubles
 '
 
 We can also compute the gradient of complex expressions such as the logistic function defined above. It turns out that the derivative of the logistic is: ds(x)/dx = s(x) \cdot (1 - s(x)).
+
+<img src=dlogistic.png >
+
+	x = T.dmatrix('x')
+	s = T.sum(1 / ( 1 + T.exp(-x))
+	gs = T.grad(s,x)
+	dlogistic = theano.function([x], gs)
+	dlogistic ( [[0,1], [-1,2]])
+	>array([[ 0.25      ,  0.19661193],
+       [ 0.19661193,  0.10499359]])
+       
+ 
