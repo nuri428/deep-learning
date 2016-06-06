@@ -48,6 +48,9 @@
 [example1.ipynb](./examples/keras1.ipynb)<br>
 [example2.ipynb](./examples.keras2.ipynb)
 
+#Keras Outliks 
+[tutorial-first-neural-network-python-keras](http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
+
 #Keras Extensions 
 [elphas](https://github.com/maxpumperla/elephas)<br>
 elphas = keras + spark 
