@@ -53,6 +53,10 @@
 
 #Keras Extensions 
 [elphas](https://github.com/maxpumperla/elephas)<br>
-elphas = keras + spark 
+elphas = keras + spark <br>
 	   = distribute deep learning python framework 
-          
+<br>
+[Caffe network convert to Keras](https://github.com/MarcBS/keras)
+
+#Keras Applications 
+[convnets-keras](https://github.com/heuritech/convnets-keras)
