@@ -84,7 +84,7 @@ if __name__ == "__main__":
         exit(-1)
     XTrain, YTrain = load_data(sys.argv[1])
     YTrain = np_utils.to_categorical(YTrain, nbClasses)
-
+    nbClasses = max(list(set(YTrain)))+1
     model = VGG_16(nbClasses)
     sgd = SGD(lr=0.1, decay=1e-6, momentum=0.9, nesterov=True)
 
