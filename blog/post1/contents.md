@@ -1,4 +1,5 @@
- 현재 진행형으로 계속 삽질중..
+#CNN(Convolution Neural Network)으로 인물을 인식 시켜보자... 
+##진행중..
 
 centos에 Caffe 설치 삽질...
 >그래픽 카드 드라이브 설치.
@@ -19,8 +20,7 @@ caffe 사용법 몰라서 해맴....
 >이걸 어디다 쓸까 고민 고민..
 >취미 생활에 적용해보자 (^^) 
 
-<img src="./img/카페학습1.jpg" alt="caffe 학습">
-<img src="./img/카페학습2.jpg" alt="caffe 학습">
+
 <img src="./img/카페학습3.jpg" alt="caffe 학습">
 <img src="./img/카페학습4.jpg" alt="caffe 학습">
 gtx 460 메로리 넘 딸림..
@@ -63,6 +63,10 @@ DIGITS 학습
 >여기 저기 기웃 기웃... 
 
 여기까지의 결과 
+
+<img src="./img/카페학습1.jpg" alt="caffe 학습">
+<img src="./img/카페학습2.jpg" alt="caffe 학습">
+
 <img src="./img/digits1.jpg" alt="digits을 이용한 학습 곡선">
 <img src="./img/digits2.jpg" alt="위 학습이 조금 진도가 나간후 모습">
 <img src="./img/digits3.jpg" alt="다른 모델 이용한 학습 곡선">
