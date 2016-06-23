@@ -19,3 +19,6 @@
 
 #강화학습
 [퐁을 학습 시키자](http://keunwoochoi.blogspot.kr/2016/06/andrej-karpathy.html)
+
+#블로그 
+[CNN으로 인물 인식 시키기 삽질기.](./blog/content1/content.md)
