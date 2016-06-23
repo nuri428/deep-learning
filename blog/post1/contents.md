@@ -66,8 +66,8 @@ DIGITS 학습
 
 여기까지의 결과 
 
-<img src="./img/카페학습1.jpg" alt="caffe 학습">
-<img src="./img/카페학습2.jpg" alt="caffe 학습">
+<img src="./img/카페학습1.jpg" style="height:400px" alt="caffe 학습">
+<img src="./img/카페학습2.jpg" style="height:400px" alt="caffe 학습">
 
 <img src="./img/digits1.jpg" alt="digits을 이용한 학습 곡선">
 <img src="./img/digits2.jpg" alt="위 학습이 조금 진도가 나간후 모습">
@@ -141,10 +141,10 @@ OpenCV에서 읽어 들인 이미지에 회전 적용 안면 인식.
 
 <img style="height:600px" src="./img/데이터 수량.jpg" alt="실제 데이터 수량">
 
-이제까지 한 결론... 
+#이제까지 한 결론... 
 >CNN으로 안면인식 하기 위한 데이터가 좀 안 좋았고, 데이타 대상도 좀 안 좋았다. 
 
-# 
+##1 안면인식은 어렵다.... T_T 
 우선.. 안면 인식은 어렵다... 
 그리고 데이타 대상이 구분하기 어렵다. 
 [이유](http://jbhuang0604.blogspot.kr/2013/04/miss-korea-2013-contestants-face.html) 앞의 링크를 보면 
@@ -160,6 +160,18 @@ OpenCV에서 읽어 들인 이미지에 회전 적용 안면 인식.
 그걸 기계로 학습 시키기에는 데이터양과 CNN 모델의 복잡도가 떨어짐.
 
 더 자세한 설명은 [링크](http://t-robotics.blogspot.kr/2013/07/pca.html#.V2uWFLiLQuU)를 참고 ^^ 
+
+
+##2. 입력된 사진이 어느정도 정제 되었어야...
+>데이타 입력으로 사용된 사진들을 보면 정면 보다 약간의 측면, 혹은 뒷면을 입력으로 주로 사용.
+>그런데 CNN 학습 모델은 정면 사진을 입력 해야 제대로 동작.. 
+
+<img style="height:400px" src="./img/faces.jpg">
+
+[Spatial Transformer Networks](https://arxiv.org/abs/1506.02025)
+아카이브에 있는 논문 이용 수정 예정...(언젠가 ^^ ㅋ)
+
+[keras 예제](http://nbviewer.jupyter.org/github/EderSantana/seya/blob/master/examples/Spatial%20Transformer%20Networks.ipynb)
 
 
 #참고 코드 
