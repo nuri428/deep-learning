@@ -24,6 +24,7 @@
 
 #블로그 
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
+- [openface로 얼굴 인식 시키기](./blog/post3/contents.md)
 
 #SPARK
 - [BerkeleyX: CS105x Introduction to Apache Spark 정리](./SPARK/Introduction to Apache Spark_정리.md)
