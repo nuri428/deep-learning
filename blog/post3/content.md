@@ -28,3 +28,57 @@
 
 7월 16일 오후 3시... 
 학습 돌리고 스터디 하러... 
+
+dnn 학습 도중 오류 발생. 
+
+`
+/root/torch/install/bin/luajit: /root/torch/install/share/lua/5.1/trepl/init.lua:384: module 'cutorch' not found:No LuaRocks module found for cutorch
+	no field package.preload['cutorch']
+	no file '/root/.luarocks/share/lua/5.1/cutorch.lua'
+	no file '/root/.luarocks/share/lua/5.1/cutorch/init.lua'
+	no file '/root/torch/install/share/lua/5.1/cutorch.lua'
+	no file '/root/torch/install/share/lua/5.1/cutorch/init.lua'
+	no file './cutorch.lua'
+	no file '/root/torch/install/share/luajit-2.1.0-beta1/cutorch.lua'
+	no file '/usr/local/share/lua/5.1/cutorch.lua'
+	no file '/usr/local/share/lua/5.1/cutorch/init.lua'
+	no file '/root/.luarocks/lib/lua/5.1/cutorch.so'
+	no file '/root/torch/install/lib/lua/5.1/cutorch.so'
+	no file '/root/torch/install/lib/cutorch.so'
+	no file './cutorch.so'
+	no file '/usr/local/lib/lua/5.1/cutorch.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+	[C]: in function 'error'
+	/root/torch/install/share/lua/5.1/trepl/init.lua:384: in function 'require'
+	./training/main.lua:16: in main chunk
+	[C]: in function 'dofile'
+	/root/torch/install/lib/luarocks/rocks/trepl/scm-1/bin/th:145: in main chunk
+	[C]: at 0x00406670
+`
+
+cutorch가 설치 되어 있지 않아서 발생...
+docker에서는 다 되는줄 알았는데... 
+
+`
+update torch first: 
+luarocks install torch
+luarocks install cutorch
+`
+
+docker에서 nvidia 디바이스를 지정해서 연결 해줘야 cuda를 제대로 씀. 
+
+
+> ls -la /dev | grep nvidia   <- 이 커맨드로 디바이스 찾음.
+> crw-rw-rw-  1 root root    195,   0 Oct 25 19:37 nvidia0 
+> crw-rw-rw-  1 root root    195, 255 Oct 25 19:37 nvidiactl
+> crw-rw-rw-  1 root root    251,   0 Oct 25 19:37 nvidia-uvm
+
+
+위 명령어로 나온 디바이스를 docker에 연동 시킴.
+
+`--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-uvm:/dev/nvidia-uvm`
+
+새벽 4시 cutorch 컴파일중... 
+
+

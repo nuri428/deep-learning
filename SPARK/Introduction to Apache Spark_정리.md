@@ -28,5 +28,11 @@ take(n)을 대체하기 위해서 절대 collect()를 쓰지 마라.
 자주 사용하는 DataFrame 객체는 cache() 메소드를 이용하라.
 cache()는 DataFrame 객체를 자주 사용하므로 캐쉬에 올리라는 명령어. 
 
+#프로젝트 텅스텐
+https://databricks.com/blog/2015/04/28/project-tungsten-bringing-spark-closer-to-bare-metal.html
 
+java는 모든 데이타를 객체로 저장하여 메모리 오버헤드가 많음.
+이 부분을 텅스텐 프로젝트를 통해 매니징하여 메모리 오버헤드를 줄이고 연산의 최적화를 꾀한다. 
+1.4 기준.
+2.
 
