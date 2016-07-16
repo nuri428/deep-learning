@@ -2,8 +2,9 @@
 
 얼굴 인식 알고리즘 중 가장 최근에 발표된 내용 
 
-[논문]{http://www.cv-foundation.org/openaccess/content_cvpr_2015/app/1A_089.pdf}
-[오픈페이스 사이트]{https://cmusatyalab.github.io/openface/}
+{논문}[http://www.cv-foundation.org/openaccess/content_cvpr_2015/app/1A_089.pdf]
+
+{오픈페이스 사이트}[https://cmusatyalab.github.io/openface/]
 
 트리플셋을 기반으로 얼굴인식 알고리즘. 
 
@@ -24,3 +25,6 @@
    파이선, 루아 두 언어로 작성. 
    루아왜 내부를 만들고, 파이썬으로 감싼 듯.
    아직 까지 파이썬으로 다 커버 못해서 루아를 이용해야 하는 부분이 보임. 
+
+7월 16일 오후 3시... 
+학습 돌리고 스터디 하러... 
