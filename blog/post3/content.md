@@ -81,4 +81,6 @@ docker에서 nvidia 디바이스를 지정해서 연결 해줘야 cuda를 제대
 
 새벽 4시 cutorch 컴파일중... 
 
+docker 실행 커맨드 
+`docker run -p 9000:9000 -p 8000:8000 -v /home/mare/data/insta-scrap-clear/:/root/openface/data/insta -v /home/mare/devel:/root/openface/driver --device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-modeset:/dev/nvidia-modeset  -t -i bamos/openface /bin/bash`
 
