@@ -43,14 +43,14 @@ pairs.txt 파일에서 평가를 위한 비교 데이터를 입력 하고
 그것을 기준으로 평가함. 
 
 ####형식
-평가횟수 TAB 평가셋 수량
-1st match 리스트(평가셋 수량)
-1st mismatch 리스트(평가셋 수량)
-2nd match 리스트(평가셋 수량)
-2nd mismatch 리스트(평가셋 수량)
------
-n th match 리스트 
-n th mismatch 리스트 
+>평가횟수 TAB 평가셋 수량
+>1st match 리스트(평가셋 수량)
+>1st mismatch 리스트(평가셋 수량)
+>2nd match 리스트(평가셋 수량)
+>2nd mismatch 리스트(평가셋 수량)
+>
+>n th match 리스트 
+>n th mismatch 리스트 
 
 #####match 리스트 
 {prefix} TAB number1 TAB number2
@@ -66,6 +66,7 @@ n th mismatch 리스트
 학습률이 떨어져서 데이터셋을 확인 해보니 
 2단계에서 얼굴 인식해서 데이터 정제 할때 얼굴이 아닌데 인식한 경우가 좀 된다. 
 결국은 사람 손을 거치긴 해야 한다는 의미.. 
+
 <img src="original.jpg" width=400px>
 원본 데이타 일부 
 
