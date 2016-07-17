@@ -7,7 +7,7 @@
 -- `docker pull bamos/openface`
 - docker 실행 
 -- `docker run -p 9000:9000 -p 8000:8000 -t -i bamos/openface /bin/bash`
-- [openface with cuda docker image](./Dockfile)
+- [openface with cuda docker image](./Dockerfile)
 - 수작업 설치
 --python2 
 --dependency
