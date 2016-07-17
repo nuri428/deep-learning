@@ -32,6 +32,7 @@ fblualib, tds, torchx, optnet : (dnn으로 학습시 필요한 라이브러리)
 - 웹 캡을 통해 얼굴 인식
 -- `./demos/web/start-servers.sh
 `
+
 ---
 #학습
 - [pretrain 기반 학습](./train.md)
