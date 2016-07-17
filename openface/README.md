@@ -1,7 +1,9 @@
 #openface 
 - [blog](http://cmusatyalab.github.io/openface/)
 - [github](https://github.com/cmusatyalab/openface)
+
 ---
+
 #설치
 - docker 이용한 설치 
 -- `docker pull bamos/openface`
@@ -23,15 +25,16 @@ fblualib, tds, torchx, optnet : (dnn으로 학습시 필요한 라이브러리)
 
 수작업 설치는 좀 버거우니 비추.. 
 상기 위의 링크에 있는 Dockerfile을 커스텀 추천
+
 ---
+
 # 예제
 - 이미지 비교
 -- `/root/openface/demos/compare.py images/examples/{lennon*,clapton*}`
 - 이미지 인식
 -- `./demos/classifier.py infer models/openface/celeb-classifier.nn4.small2.v1.pkl ./images/examples/carell.jpg`
 - 웹 캡을 통해 얼굴 인식
--- `./demos/web/start-servers.sh
-`
+-- `./demos/web/start-servers.sh`
 
 ---
 #학습
