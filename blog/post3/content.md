@@ -84,3 +84,10 @@ docker에서 nvidia 디바이스를 지정해서 연결 해줘야 cuda를 제대
 docker 실행 커맨드 
 `docker run -p 9000:9000 -p 8000:8000 -v /home/mare/data/insta-scrap-clear/:/root/openface/data/insta -v /home/mare/devel:/root/openface/driver --device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-modeset:/dev/nvidia-modeset  -t -i bamos/openface /bin/bash`
 
+#도커 작성. 
+기존의 openface 도커에서는 cuda 관련한 설정에서 오류 발생.. 
+nvidia driver 설치도 안되고.. 
+위의 실행 커맨드로도 문제 생김.
+차라리 docker 이미지를 새로 작성 
+
+

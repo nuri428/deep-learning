@@ -3,6 +3,7 @@
 - [Keras](./keras/README.md)
 - [Theano](./Theano/README.MD)
 - [tensorflow](./tensorflow/README.MD)
+- [openface](./openface/README.MD)
 
 #DeepLearning Sites 
 - [http://www.wildml.com/](http://www.wildml.com/)
