@@ -8,6 +8,8 @@
 - docker 실행 
 -- `docker run -p 9000:9000 -p 8000:8000 -t -i bamos/openface /bin/bash`
 - [openface with cuda docker image](./Dockerfile)
+-- cuda 7.5 cudnn5 ubuntu 14.04
+-- nvidia-docker로 실행
 - 수작업 설치
 --python2 
 --dependency
