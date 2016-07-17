@@ -32,6 +32,12 @@ LFW의 정확도를 계산 하려고 한다면, 당신의 데이터셋에서 LFW
 
 dataset option을 수정 해야 2단계에서 정제된 이미지가 저장된 경로를 액세스 함. 
 
+`./main.lua -data ./../data/imgs/aligned/ -lfwDir ./../data/imgs/aligned/ -peoplePerBatch 5`
+>data : 데이타 경로 
+>lfwDir : 테스트 데이타 경로
+>peoplePerBatch : 기본값 15, 클래스가 이 값보다 작을 경우 오류 발생. 
+>> 오류 발생할 경우 peoplePerBatch 값을 클래스의 수량으로 수정
+
 학습 과정
 <img src="dnn_train.jpg">
 
