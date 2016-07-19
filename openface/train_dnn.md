@@ -68,6 +68,14 @@ pairs.txt 파일에서 평가를 위한 비교 데이터를 입력 하고
 
 ##4 트레이닝 분석
 
+<img src="dnn_accuracy.png">
+Epoch당 aacuracy 증가. 
+
+<img src="dnn_loss.png">
+Epoch당 loss 변화율.
+
+---
+
 #경과
 학습률이 떨어져서 데이터셋을 확인 해보니 
 2단계에서 얼굴 인식해서 데이터 정제 할때 얼굴이 아닌데 인식한 경우가 좀 된다. 
