@@ -1,7 +1,7 @@
 #openface 
 - [blog](http://cmusatyalab.github.io/openface/)
 - [github](https://github.com/cmusatyalab/openface)
-
+- [overview](./openface.pptx)
 ---
 
 #설치
