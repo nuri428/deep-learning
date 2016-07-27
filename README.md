@@ -20,6 +20,9 @@
 - [컨불루션 뉴럴넷2](http://keunwoochoi.blogspot.kr/2015/07/convolutional-neural-network.html)
 - [컨불루션 뉴럴넷 개요](http://keunwoochoi.blogspot.kr/search/label/CNNs)
 
+#얼굴인식
+- [](./faceRecon/contents.md)
+
 #강화학습
 - [퐁을 학습 시키자](http://keunwoochoi.blogspot.kr/2016/06/andrej-karpathy.html)
 
