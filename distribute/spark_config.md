@@ -81,7 +81,8 @@ $ sudo apt-get install oracle-java7-installer
 Guest OS 세대에 전부 Ubuntu Server 를 설치해주고 네트워크 까지 설치했다면 본격적으로 설치를 시작할 시간입니다. master 로 설정할 cloud0 에서 작업을 시작합니다.
 
 2.1 스파크 다운로드
-http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-without-hadoop.tgz
+hadoop 없는 링크 http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-without-hadoop.tgz
+hadoop 내장 링크 http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-hadoop2.6.tgz
 위의 파일을 다운 로드 받아서 게스트 (Guest) 에 밀어 넣던지 아니면 게스트에서 (인터넷이 된다는 가정하에)
 $ cd ~/
 $ wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-without-hadoop.tgz
@@ -90,25 +91,27 @@ $ wget http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-without-hadoop.tgz
 
 같은 방식으로 다운 받으시면 됩니다. 그리고 rsync 를 이용할 것이기 때문에 master 인 cloud0 에서 작업을 진행하면 됩니다. 
 적당한 곳에 풀어줍니다.
-$ cd ~/
-$ tar xvzf http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-without-hadoop.tgz
+`$ cd ~/`
+`$ tar xvzf http://d3kbcqa49mib13.cloudfront.net/spark-2.0.0-bin-without-hadoop.tgz`
 
-$HADOOP_HOME = ~/hadoop-2.6.0 
-$SPARK_HOME = ~/spark
+`$HADOOP_HOME = ~/hadoop-2.6.0 `
+`$SPARK_HOME = ~/spark`
 
 위의 두가지 변수를 가정하고 진행합니다. 
 
 2.1.1 $SPARK_HOME/conf/slaves 작성
 $SPARK_HOME/conf/slaves.template를 복사해서 slaves 파일을 만들고 다음과 같이 수정합니다. 
+`
 cloud0
 cloud1
 cloud2
----
+---`
 
 2.1.2 $SPARK_HOME/conf/spark_env.sh.template를 복사해서 spark_env.sh 파일을 만들고 다음과 같이 수정합니다. 
-SPARK_MASTER_IP=cloud0
+`SPARK_MASTER_IP=cloud0
 #별도의 HADOOP이 설치 되어 있을시.
 HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+`
 
 2.1.3 rsync 를 이용한 복사
 cloud0 에서 다음과 같이 실행해 줍니다.
