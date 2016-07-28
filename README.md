@@ -1,3 +1,6 @@
+#Distribute Computing
+- [Hadoop 설정](./distribute/hadoop_config.md)
+- [Spark 설정](./distribute/spark_config.md)
 
 #Deep Learning Library
 - [Keras](./keras/README.md)
