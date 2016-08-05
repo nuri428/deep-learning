@@ -1,7 +1,25 @@
+#Deep Learning for Natural Language Processing
+- [understanding-natural-language-deep-neural-networks-using-torch](https://devblogs.nvidia.com/parallelforall/understanding-natural-language-deep-neural-networks-using-torch/)
+- [deep-learning-nutshell-sequence-learning](https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-sequence-learning/)
+- [Deep Learning for NLP(without Magic)](./nlp/socher-lxmls.pdf)
+- [Deep Learning for Natural Language Processing](./nlp/2009_tutorial_nips.pdf)
+- [Natural Language Processing Application of Deep Learning](./nlp/nlp.pdf)
+- [Deep Learning for NLP resources](https://github.com/andrewt3000/DL4NLP/blob/master/README.md)
+- [Natural Language Understanding](http://www.inf.ed.ac.uk/teaching/courses/nlu/lectures.html)
+- [Natural Language Understanding with Distributed Representations](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
+
+#chatbot
+- [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
+- [ChatterBot](https://github.com/gunthercox/ChatterBot)
+- [From Language to Information](./chatbot/chatbot.pdf)
 #Distribute Computing
 - [Hadoop 설정](./distribute/hadoop_config.md)
 - [Spark 설정](./distribute/spark_config.md)
 
+#Reinforce Learning 
+- [rl](https://github.com/aikorea/awesome-rl)
+- [[강화학습 기반의 자율적인 행동 학습]](http://www.gameai.net/Article/RLAgent/RLAgent.htm)
+- [강화학습](http://solarisailab.com/archives/57)
 #Deep Learning Library
 - [Keras](./keras/README.md)
 - [Theano](./Theano/README.MD)
