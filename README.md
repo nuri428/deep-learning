@@ -12,6 +12,7 @@
 - [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
 - [ChatterBot](https://github.com/gunthercox/ChatterBot)
 - [From Language to Information](./chatbot/chatbot.pdf)
+
 #Distribute Computing
 - [Hadoop 설정](./distribute/hadoop_config.md)
 - [Spark 설정](./distribute/spark_config.md)
