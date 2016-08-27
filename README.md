@@ -7,6 +7,7 @@
 - [Deep Learning for NLP resources](https://github.com/andrewt3000/DL4NLP/blob/master/README.md)
 - [Natural Language Understanding](http://www.inf.ed.ac.uk/teaching/courses/nlu/lectures.html)
 - [Natural Language Understanding with Distributed Representations](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
+- [awesome-nlp]https://github.com/keonkim/awesome-nlp#user-content-python
 
 #chatbot
 - [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
@@ -24,11 +25,11 @@
 
 #Deep Learning Library
 - 범용 라이브러리 
--- [Keras](./keras/README.md)
--- [Theano](./Theano/README.MD)
--- [tensorflow](./tensorflow/README.MD)
+[Keras](./keras/README.md)
+[Theano](./Theano/README.MD)
+[tensorflow](./tensorflow/README.MD)
 - 이미지 특화 라이브러리 
--- [openface](./openface/README.md)
+[openface](./openface/README.md)
 
 #DeepLearning Sites 
 - [http://www.wildml.com/](http://www.wildml.com/)
