@@ -23,10 +23,12 @@
 - [강화학습](http://solarisailab.com/archives/57)
 
 #Deep Learning Library
-- [Keras](./keras/README.md)
-- [Theano](./Theano/README.MD)
-- [tensorflow](./tensorflow/README.MD)
-- [openface](./openface/README.md)
+- 범용 라이브러리 
+-- [Keras](./keras/README.md)
+-- [Theano](./Theano/README.MD)
+-- [tensorflow](./tensorflow/README.MD)
+- 이미지 특화 라이브러리 
+-- [openface](./openface/README.md)
 
 #DeepLearning Sites 
 - [http://www.wildml.com/](http://www.wildml.com/)
