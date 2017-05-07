@@ -14,10 +14,6 @@
 - [ChatterBot](https://github.com/gunthercox/ChatterBot)
 - [From Language to Information](./chatbot/chatbot.pdf)
 
-#Distribute Computing
-- [Hadoop 설정](./distribute/hadoop_config.md)
-- [Spark 설정](./distribute/spark_config.md)
-
 #Reinforce Learning 
 - [rl](https://github.com/aikorea/awesome-rl)
 - [[강화학습 기반의 자율적인 행동 학습]](http://www.gameai.net/Article/RLAgent/RLAgent.htm)
@@ -25,11 +21,11 @@
 
 #Deep Learning Library
 - 범용 라이브러리 
-[Keras](./keras/README.md)
-[Theano](./Theano/README.MD)
-[tensorflow](./tensorflow/README.MD)
+  [Keras](./library/keras/README.md)
+  [Theano](./library/Theano/README.MD)
+  [tensorflow](./library/tensorflow/README.MD)
 - 이미지 특화 라이브러리 
-[openface](./openface/README.md)
+  [openface](./library/openface/README.md)
 
 #DeepLearning Sites 
 - [http://www.wildml.com/](http://www.wildml.com/)
@@ -43,7 +39,7 @@
 - [컨불루션 뉴럴넷 개요](http://keunwoochoi.blogspot.kr/search/label/CNNs)
 
 #얼굴인식
-- [얼굴인식](./faceRecon/contents.md)
+- [얼굴인식](./library/faceRecon/contents.md)
 
 #강화학습
 - [퐁을 학습 시키자](http://keunwoochoi.blogspot.kr/2016/06/andrej-karpathy.html)
@@ -52,5 +48,3 @@
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
 - [openface로 얼굴 인식 시키기](./blog/post3/content.md)
 
-#SPARK
-- [BerkeleyX: CS105x Introduction to Apache Spark 정리](./SPARK/Introduction to Apache Spark_정리.md)
