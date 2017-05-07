@@ -55,7 +55,7 @@ CNN 관련 컨텐츠
 ===
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
 - [openface로 얼굴 인식 시키기](./blog/post3/content.md)
-- [학습 시킨것 사용하기](./blog/4/tensorflow 학습 시킨 모델 사용하기.md)
+- [학습 시킨것 사용하기](./blog/4/use_tensorflow.md)
 
 tensorflow 스터디  
 ===
