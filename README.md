@@ -56,3 +56,6 @@ CNN 관련 컨텐츠
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
 - [openface로 얼굴 인식 시키기](./blog/post3/content.md)
 
+tensorflow 스터디  
+===
+- [tensorflow](./tf1study/index.md)
