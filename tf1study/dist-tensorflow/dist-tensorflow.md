@@ -129,18 +129,16 @@ tf.Variable, tf.Const를 선언할때 gpu를 지정가능.해당 변수 혹은 �
 
 ## 분산의 방법
 
-1. 데이터의 분산 처리 
-2. 모델의 분산 처리 
+1. 데이터 분산 처리 
+2. 모델 분산 처리 
 
-![ModelDataParallelism](/Users/nuri/git/deep-learning/tf1study/dist-tensorflow/ModelDataParallelism.svg)
+![ModelDataParallelism](./ModelDataParallelism.svg)
 
 tensorflow 는 데이터처리 병렬화를 지원 
 
+![pasted image 0](./pasted image 0.png)
 
-
-![pasted image 0](/Users/nuri/git/deep-learning/tf1study/dist-tensorflow/pasted image 0.png)
-
-![model1](/Users/nuri/git/deep-learning/tf1study/dist-tensorflow/model1.png)
+![model1](./model1.png)
 
 
 
@@ -149,9 +147,7 @@ tensorflow 는 데이터처리 병렬화를 지원
 단일 머신에서의 분산 처리 
 
 
-
-![model2](/Users/nuri/git/deep-learning/tf1study/dist-tensorflow/model2.png)
-
+![model2](./model2.png)
 
 
 Cluster 구성 요소
@@ -275,7 +271,7 @@ tensorflow를 통해 작성된 그래프의 크기가 단일 머신보다 크다
 
 
 
-![264-large-scale-deeplearningonspark-41-638](/Users/nuri/git/deep-learning/tf1study/dist-tensorflow/264-large-scale-deeplearningonspark-41-638.jpg)
+![264-large-scale-deeplearningonspark-41-638](./264-large-scale-deeplearningonspark-41-638.jpg)
 
 대안 : 모델 병렬화
 
@@ -287,18 +283,10 @@ ps. 라이버러리에서 지원되는지 여부는 모름.
 
 [관련논문](https://arxiv.org/pdf/1404.5997v2.pdf)
 
-![tensortraining](/Users/nuri/git/deep-learning/tf1study/dist-tensorflow/effect.png)
+![tensortraining](./effect.png)
 
+![tensortraining](./tensortraining.jpg)			
 
-![tensortraining](/Users/nuri/git/deep-learning/tf1study/dist-tensorflow/tensortraining.jpg)			
-​		
-​	
-
-
-​				
-​			
-​		
-​	
 
 
 
