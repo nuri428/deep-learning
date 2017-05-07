@@ -1,7 +1,7 @@
 스터디 발표 일정 및 발표 내용 
 
 + 3월 8일 발표자 : 강재호님
-+ 3월 15일 발표자 : 강재호님 [자료](https://drive.google.com/open?id=1PzF2EFHUZEAZqAYFYQHGmaDCfT2qHGADX7msVPQhKsQ)
++ 3월 15일 발표자 : 강재호님 [자료](https://docs.google.com/presentation/d/1PzF2EFHUZEAZqAYFYQHGmaDCfT2qHGADX7msVPQhKsQ/edit#slide=id.p)
 + 3월 22일 발표자 : 강재호님 
 [자료](https://docs.google.com/presentation/d/1KhW8rF7HOEIHv1aQZcQQPKE38q-jSHO0PSG5vE1szkc/edit)
 
