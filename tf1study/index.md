@@ -3,7 +3,7 @@
 + 3월 8일 발표자 : 강재호님
 + 3월 15일 발표자 : 강재호님 [자료](https://docs.google.com/presentation/d/1PzF2EFHUZEAZqAYFYQHGmaDCfT2qHGADX7msVPQhKsQ/edit#slide=id.p)
 + 3월 22일 발표자 : 강재호님 
-[자료](https://docs.google.com/presentation/d/1KhW8rF7HOEIHv1aQZcQQPKE38q-jSHO0PSG5vE1szkc/edit)
+[자료1](https://docs.google.com/presentation/d/1KhW8rF7HOEIHv1aQZcQQPKE38q-jSHO0PSG5vE1szkc/edit) [자료2](./mnist.md)
 
 + 3월 29일 발표자  : 전성욱님 
 
