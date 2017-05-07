@@ -40,8 +40,8 @@
 + 역할  
     * 입력을 sigmoid와 마찬가지로 0과 1사이의 값으로 변환한다.
     * 변환된 결과에 대한 합계가 1이 되도록 만들어준다.
-    
-softmax, sigmoid 함수는 ![활성화 함수](http://www.aistudy.com/neural/theory_oh.htm#_bookmark_23d2610)
+
+softmax, sigmoid 함수는 [활성화 함수](http://www.aistudy.com/neural/theory_oh.htm#_bookmark_23d2610)
 
 ### cross_entropy
 + softmax 모델이 잘 학습하고 있는지에 대한 평가
@@ -79,8 +79,6 @@ x점에 대한 정보를 저장하기 위한 2차원 텐서
 None는 어떤 크기나 가능하다는 뜻이며, 여기서는 학습과정에 사용될 총 이미지 개수
 
     x = tf.placeholder("float", [None, 784])
-<!-- # x = tf.placeholder(tf.float32, shape=[None,784]) -->
-
 
 + 소프트맥스 함수
     - 0~9까지 각 숫자와 입력 이미지가 얼마나 비슷한지에 대한 확률을 예측하기 위해 사용  
@@ -89,7 +87,6 @@ None는 어떤 크기나 가능하다는 뜻이며, 여기서는 학습과정에
         y = tf.nn.softmax(tf.matmul(x,W) + b)
 ​    
 
-<!-- # y_ = tf.placeholder(tf.float32, shape=[None,10]) -->
 + 교차 엔트로피에러
     * 반복이 일어날 때마다 훈련 알고리즘은 훈련 데이터를 받아 신경망에 적용하고 결과를 기댓값과 비교
     * 비용함수를 사용하여 모델이 얼마나 나쁜지를 나타내는 함수를 최소화하는 W와 b를 얻는 것이 목적
@@ -116,9 +113,9 @@ None는 어떤 크기나 가능하다는 뜻이며, 여기서는 학습과정에
     * 학습속도 0.01과 경사 하강법 알고리즘을 사용하여 croee_entropy를 최소화하는 역전파 알고리즘
 
 
-    "'
-    train_step = tf.train.GradientDescentOptimizer(0.01).minimize(cross_entropy)
-    "'
+```python
+train_step = tf.train.GradientDescentOptimizer(0.01).minimize(cross_entropy)
+```
 
 모든 변수를 초기화한 후, 세션 시작
 
@@ -140,8 +137,8 @@ None는 어떤 크기나 가능하다는 뜻이며, 여기서는 학습과정에
         correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
 + accuracy
     * correct_prediction은 boolean으로 이루어진 리스트 리턴 
-    * boolean을 수치값으로 변경하여 예측한 것이 얼마만큼 맞는지 확인
-        - ex) [true,false,true,true] => [1,0,1,1] => 평균 0.75
+* boolean을 수치값으로 변경하여 예측한 것이 얼마만큼 맞는지 확인
+     - ex) [true,false,true,true] => [1,0,1,1] => 평균 0.75
 
 
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
