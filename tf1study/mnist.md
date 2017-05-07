@@ -134,12 +134,19 @@ train_step = tf.train.GradientDescentOptimizer(0.01).minimize(cross_entropy)
     * tf.equal을 사용하여 예측값과 실제 레이블을 비교
 
 
-        correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
+```python
+    correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
+```
 + accuracy
     * correct_prediction은 boolean으로 이루어진 리스트 리턴 
 * boolean을 수치값으로 변경하여 예측한 것이 얼마만큼 맞는지 확인
      - ex) [true,false,true,true] => [1,0,1,1] => 평균 0.75
 
 
-        accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-        print sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+```python
+    accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
+    print sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+```
+
+
+
