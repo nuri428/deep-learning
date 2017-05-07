@@ -132,15 +132,11 @@ tf.Variable, tf.Const를 선언할때 gpu를 지정가능.해당 변수 혹은 �
 1. 데이터 분산 처리 
 2. 모델 분산 처리 
 
-![ModelDataParallelism](./ModelDataParallelism.svg)
-
 tensorflow 는 데이터처리 병렬화를 지원 
 
-![pasted image 0](./pasted image 0.png)
+![dist-tensorflow](./dist-tensorflow.png)
 
 ![model1](./model1.png)
-
-
 
 
 
