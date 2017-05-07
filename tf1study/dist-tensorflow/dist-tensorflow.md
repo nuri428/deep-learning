@@ -285,6 +285,25 @@ ps. 라이버러리에서 지원되는지 여부는 모름.
 
 
 
+작성자 환경에서 PS 서버 2대, worker 3대 돌리는 코드 
+|ip|gpu|
+|---|---|
+|192.168.0.20|NVIDIA GTX970|
+|192.168.0.80|NVIDIA GTX970|
+|192.168.0.80|NVIDIA Titan-X|
+|---|---|
 
+
+'''bash
+python distributed_mnist.py --ps_hosts=192.168.0.20:2222,192.168.0.80:2222 --worker_hosts=192.168.0.20:2223,192.168.0.80:2222,192.168.0.80:2223 --job_name=ps --task_index=0
+
+python distributed_mnist.py --ps_hosts=192.168.0.20:2222,192.168.0.80:2222 --worker_hosts=192.168.0.20:2223,192.168.0.80:2222,192.168.0.80:2223 --job_name=ps --task_index=1
+
+python distributed_mnist.py --ps_hosts=192.168.0.20:2222,192.168.0.80:2222 --worker_hosts=192.168.0.20:2223,192.168.0.80:2223,192.168.0.80:2224 --job_name=worker --task_index=0
+
+CUDA_VISIBLE_DEVICES=0 python distributed_mnist.py --ps_hosts=192.168.0.20:2222,192.168.0.80:2222 --worker_hosts=192.168.0.20:2223,192.168.0.80:2223,192.168.0.80:2224 --job_name=worker --task_index=1
+
+CUDA_VISIBLE_DEVICES=1 python distributed_mnist.py --ps_hosts=192.168.0.20:2222,192.168.0.80:2222 --worker_hosts=192.168.0.20:2223,192.168.0.80:2223,192.168.0.80:2224 --job_name=worker --task_index=2
+'''
  
 
