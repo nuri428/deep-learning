@@ -314,3 +314,8 @@ CUDA_VISIBLE_DEVICES=1 python distributed_mnist.py --ps_hosts=192.168.0.20:2222,
 
 [sample code](./distributed_mnist.py) 
 
+    # 특정 gpu에만 작업을 할당 하려면 worker_device="/job:worker/task:%d/gpu:0" 이용 
+    # 단, CUDA_VISIBLE_DEVICES를 이용하여 동작하는 상태에서 해당 gpu의 식별 번호가 0이 어야 함. 
+    # with tf.device(tf.train.replica_device_setter(
+    #     worker_device="/job:worker/task:%d/gpu:0" % FLAGS.task_index,
+    #     cluster=cluster)):

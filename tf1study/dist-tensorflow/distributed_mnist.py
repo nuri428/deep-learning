@@ -23,6 +23,8 @@ IMAGE_PIXELS = 28
 
 def build_model(device):
   with tf.device(device):
+    # 특정 gpu에만 작업을 할당 하려면 worker_device="/job:worker/task:%d/gpu:0" 이용 
+    # 단, CUDA_VISIBLE_DEVICES를 이용하여 동작하는 상태에서 해당 gpu의 식별 번호가 0이 어야 함. 
     # with tf.device(tf.train.replica_device_setter(
     #     worker_device="/job:worker/task:%d/gpu:0" % FLAGS.task_index,
     #     cluster=cluster)):
@@ -77,42 +79,6 @@ def main(_):
     saver = tf.train.Saver()
     summary_op = tf.merge_all_summaries()
     init_op = tf.global_variables_initializer()
-
-    # # Assigns ops to the local worker by default.
-    # with tf.device(tf.train.replica_device_setter(
-    #     worker_device="/job:worker/task:%d/gpu:0" % FLAGS.task_index,
-    #     cluster=cluster)):
-
-    #   # Variables of the hidden layer
-    #   hid_w = tf.Variable(
-    #       tf.truncated_normal([IMAGE_PIXELS * IMAGE_PIXELS, FLAGS.hidden_units],
-    #                           stddev=1.0 / IMAGE_PIXELS), name="hid_w")
-    #   hid_b = tf.Variable(tf.zeros([FLAGS.hidden_units]), name="hid_b")
-
-    #   # Variables of the softmax layer
-    #   sm_w = tf.Variable(
-    #       tf.truncated_normal([FLAGS.hidden_units, 10],
-    #                           stddev=1.0 / math.sqrt(FLAGS.hidden_units)),
-    #       name="sm_w")
-    #   sm_b = tf.Variable(tf.zeros([10]), name="sm_b")
-
-    #   x = tf.placeholder(tf.float32, [None, IMAGE_PIXELS * IMAGE_PIXELS])
-    #   y_ = tf.placeholder(tf.float32, [None, 10])
-
-    #   hid_lin = tf.nn.xw_plus_b(x, hid_w, hid_b)
-    #   hid = tf.nn.relu(hid_lin)
-
-    #   y = tf.nn.softmax(tf.nn.xw_plus_b(hid, sm_w, sm_b))
-    #   loss = -tf.reduce_sum(y_ * tf.log(tf.clip_by_value(y, 1e-10, 1.0)))
-
-    #   global_step = tf.Variable(0)
-
-      # train_op = tf.train.AdagradOptimizer(0.01).minimize(
-      #     loss, global_step=global_step)
-
-      # saver = tf.train.Saver()
-      # summary_op = tf.merge_all_summaries()
-      # init_op = tf.initialize_all_variables()
 
     # Create a "supervisor", which oversees the training process.
     sv = tf.train.Supervisor(is_chief=(FLAGS.task_index == 0),
