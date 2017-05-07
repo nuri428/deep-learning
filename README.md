@@ -9,8 +9,8 @@ Deep Learning for Natural Language Processing
 - [Natural Language Understanding](http://www.inf.ed.ac.uk/teaching/courses/nlu/lectures.html)
 - [Natural Language Understanding with Distributed Representations](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
 - [awesome-nlp](https://github.com/keonkim/awesome-nlp#user-content-python)
-Chatbot
-===
+  Chatbot
+  ===
 - [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
 - [ChatterBot](https://github.com/gunthercox/ChatterBot)
 - [From Language to Information](./chatbot/chatbot.pdf)
@@ -55,6 +55,7 @@ CNN 관련 컨텐츠
 ===
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
 - [openface로 얼굴 인식 시키기](./blog/post3/content.md)
+- [학습 시킨것 사용하기](./blog/4/tensorflow 학습 시킨 모델 사용하기.md)
 
 tensorflow 스터디  
 ===
