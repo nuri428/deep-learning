@@ -36,6 +36,26 @@ DeepLearning Sites
 - [Machine Learning Cookbook](https://www.gitbook.com/book/bigaidream/subsets_ml_cookbook/details)
 - [앤드류 응 교수 인터뷰...](http://events.technologyreview.com/emtech/digital/16/video/watch/andrew-ng-deep-learning/)
 - [스탠포드대 기계학습 코세라 강의](https://www.coursera.org/learn/machine-learning/home/welcome)
+- [활성화 함수](https://en.wikipedia.org/wiki/Activation_function)
+- [Learning from Imbalanced Data](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.331.6205&rep=rep1&type=pdf)
+- [Editorial: Special Issue on Learning from Imbalanced Data Sets](https://www3.nd.edu/~dial/publications/chawla2004editorial.pdf)
+
+
+One Class Classification
+===
+ - [A Survey of Recent Trends in One Class Classification](https://cs.uwaterloo.ca/~s255khan/files/occ_survey09.pdf)
+ - [occ](https://www.hindawi.com/journals/mpe/2015/412957/)
+ - [scilearn occ](http://scikit-learn.org/stable/auto_examples/svm/plot_oneclass.html)
+ - [fMRI Analysis via One-class Machine Learning Techniques](https://www.ijcai.org/Proceedings/05/Papers/post-0172.pdf)
+ - [One-class document classification via Neural Networks$](http://cs.haifa.ac.il/~manevitz/Publication/One-class%20document%20classification%20via%20Neural%20Networks.pdf)
+ - [On the Exploitation of One Class Classification to Distinguish Food vs Non-Food Images](http://iplab.dmi.unict.it/madima2015/Madima2015OneClassClassification.pdf)
+ 
+
+Tensorboard 사용법
+===
+- [텐서보드 사용법](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tensorboard/README.md)
+- [텐서보드 사용법](https://www.tensorflow.org/versions/master/get_started/summaries_and_tensorboard)
+
 
 CNN 관련 컨텐츠
 ===
@@ -43,6 +63,8 @@ CNN 관련 컨텐츠
 - [컨불루션 뉴럴넷2](http://keunwoochoi.blogspot.kr/2015/07/convolutional-neural-network.html)
 - [컨불루션 뉴럴넷 개요](http://keunwoochoi.blogspot.kr/search/label/CNNs)
 - [dcnn-intro-WinstonHsu-15s](http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015/NN%20Lecture/dcnn-intro-WinstonHsu-15s.pdf)
+- [ai korea](http://aikorea.org/cs231n/convolutional-networks/)
+- [Deep Mnist](http://antilibrary.org/1043)
 
 얼굴인식
 ===
