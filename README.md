@@ -42,6 +42,7 @@ CNN 관련 컨텐츠
 - [컨불루션 뉴럴넷1](http://t-robotics.blogspot.kr/2016/05/convolutional-neural-network_31.html#.V1ZrWpOLSlM)
 - [컨불루션 뉴럴넷2](http://keunwoochoi.blogspot.kr/2015/07/convolutional-neural-network.html)
 - [컨불루션 뉴럴넷 개요](http://keunwoochoi.blogspot.kr/search/label/CNNs)
+- [dcnn-intro-WinstonHsu-15s](http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015/NN%20Lecture/dcnn-intro-WinstonHsu-15s.pdf)
 
 얼굴인식
 ===
