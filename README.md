@@ -9,11 +9,17 @@ Deep Learning for Natural Language Processing
 - [Natural Language Understanding](http://www.inf.ed.ac.uk/teaching/courses/nlu/lectures.html)
 - [Natural Language Understanding with Distributed Representations](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
 - [awesome-nlp](https://github.com/keonkim/awesome-nlp#user-content-python)
-  Chatbot
-  ===
+
+
+
+Chatbot
+===
 - [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
 - [ChatterBot](https://github.com/gunthercox/ChatterBot)
 - [From Language to Information](./chatbot/chatbot.pdf)
+- [Natural Language Pipeline for CHatbots](https://hackernoon.com/natural-language-pipeline-for-chatbots-897bda41482)
+- [봇그리다](https://brunch.co.kr/@pilsogood/3)
+
 
 Reinforce Learning 
 ===
@@ -65,6 +71,8 @@ CNN 관련 컨텐츠
 - [dcnn-intro-WinstonHsu-15s](http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015/NN%20Lecture/dcnn-intro-WinstonHsu-15s.pdf)
 - [ai korea](http://aikorea.org/cs231n/convolutional-networks/)
 - [Deep Mnist](http://antilibrary.org/1043)
+- [VGG Model](https://github.com/machrisaa/tensorflow-vgg/blob/master/test_vgg19_trainable.py)
+
 
 얼굴인식
 ===
@@ -79,6 +87,19 @@ CNN 관련 컨텐츠
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
 - [openface로 얼굴 인식 시키기](./blog/post3/content.md)
 - [학습 시킨것 사용하기](./blog/4/use_tensorflow.md)
+
+tensorflow document
+===
+- [분산](https://www.tensorflow.org/deploy/distributed)
+- [분산 텐서플로우 클러스터](https://www.tensorflow.org/api_docs/python/tf/train/ClusterSpec)
+- [기본강의](https://github.com/hunkim/DeepLearningZeroToAll/blob/master/lab-13-3-mnist_save_restore.py)
+- [고성능모델](https://www.tensorflow.org/performance/performance_models)
+
+
+GAN
+===
+- [Deep Generative Models](https://www.slideshare.net/HyungjooCho2/deep-generative-modelpdf)
+
 
 tensorflow 스터디  
 ===
