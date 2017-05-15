@@ -1,3 +1,160 @@
+# Parallel Processing
+
+Tensorflow 0.8 이후 버젼부터 분산 처리 지원(GPU)
+
+
+
+텐서 플로에서 디바이스 지정 방법
+
+/cpu:0 : 서버의 cpu를 지정
+
+/gpu:0 : 서버의 첫번째 gpu 지정
+
+/gpu:1 : 서버의 두번째 gpu 지정
+
+/gpu:n : 서버의 n-1 번째 gpup 지정
+
+
+
+연산 및 텐서가 어떤 디바이스에 할당되어 있느지 알고 싶다면 
+
+```python
+log.device.placement=True
+```
+
+위와 같이 지정 
+
+
+
+```python
+import tensorflow as tf
+a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2,3], name='a')
+b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3,2], name='b')
+c = tf.matmul(a, b)
+
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+print sess.run(c)
+```
+
+
+
+```python
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:128] successfully opened CUDA library libcurand.so locally
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties:
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:02:00.0
+Total memory: 11.92GiB
+Free memory: 11.81GiB
+W tensorflow/stream_executor/cuda/cuda_driver.cc:590] creating context when one is currently active; existing: 0x190d4f0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 1 with properties:
+name: GeForce GTX 970
+major: 5 minor: 2 memoryClockRate (GHz) 1.2155
+pciBusID 0000:05:00.0
+Total memory: 3.94GiB
+Free memory: 3.88GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 0 and 1
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:777] Peer access not supported between device ordinals 1 and 0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 1
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y N
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 1:   N Y
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: GeForce GTX 970, pci bus id: 0000:05:00.0)
+Device mapping:
+/job:localhost/replica:0/task:0/gpu:0 -> device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0
+/job:localhost/replica:0/task:0/gpu:1 -> device: 1, name: GeForce GTX 970, pci bus id: 0000:05:00.0
+I tensorflow/core/common_runtime/direct_session.cc:255] Device mapping:
+/job:localhost/replica:0/task:0/gpu:0 -> device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0
+/job:localhost/replica:0/task:0/gpu:1 -> device: 1, name: GeForce GTX 970, pci bus id: 0000:05:00.0
+
+MatMul: (MatMul): /job:localhost/replica:0/task:0/gpu:0
+I tensorflow/core/common_runtime/simple_placer.cc:827] MatMul: (MatMul)/job:localhost/replica:0/task:0/gpu:0
+b: (Const): /job:localhost/replica:0/task:0/gpu:0
+I tensorflow/core/common_runtime/simple_placer.cc:827] b: (Const)/job:localhost/replica:0/task:0/gpu:0
+a: (Const): /job:localhost/replica:0/task:0/gpu:0
+I tensorflow/core/common_runtime/simple_placer.cc:827] a: (Const)/job:localhost/replica:0/task:0/gpu:0
+[[ 22.  28.]
+ [ 49.  64.]]
+```
+
+
+
+특정 디바이스에서 지정된 연산이 실행 되도록 하고 싶다면 tf.device 변수를 사용하여 디바이스 컨텍스트를 작성
+
+디바이스 컨텍스트 안의 모든 변수는 지정된 디바이스에 할당 됩니다. 
+
+```python
+import tensorflow as tf
+with tf.device('/gpu:2'):
+	a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2,3], name='a')
+	b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3,2], name='b')
+	c = tf.matmul(a, b)
+
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+print sess.run(c)
+```
+
+위의 예제에서 a, b, c는 gpu2에 할당 됩니다. 
+
+
+
+## 여러 GPU에서의 병렬 처리
+
+```python
+import tensorflow as tf
+c = []
+
+for d in ['/gpu:0', '/gpu:1']:
+	with tf.device(d):
+		a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2,3], name='a')
+		b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3,2], name='b')
+		c.append(tf.matmul(a,b))
+	
+with tf.device("/cpu:0"):
+	sum = tf.add_n(c)
+	
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+print sess.run(sum)
+```
+
+
+
+
+
+```python
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0)
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:1) -> (device: 1, name: GeForce GTX 970, pci bus id: 0000:05:00.0)
+Device mapping:
+/job:localhost/replica:0/task:0/gpu:0 -> device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0
+/job:localhost/replica:0/task:0/gpu:1 -> device: 1, name: GeForce GTX 970, pci bus id: 0000:05:00.0
+I tensorflow/core/common_runtime/direct_session.cc:255] Device mapping:
+/job:localhost/replica:0/task:0/gpu:0 -> device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:02:00.0
+/job:localhost/replica:0/task:0/gpu:1 -> device: 1, name: GeForce GTX 970, pci bus id: 0000:05:00.0
+
+MatMul_1: (MatMul): /job:localhost/replica:0/task:0/gpu:1
+I tensorflow/core/common_runtime/simple_placer.cc:827] MatMul_1: (MatMul)/job:localhost/replica:0/task:0/gpu:1
+MatMul: (MatMul): /job:localhost/replica:0/task:0/gpu:0
+I tensorflow/core/common_runtime/simple_placer.cc:827] MatMul: (MatMul)/job:localhost/replica:0/task:0/gpu:0
+AddN: (AddN): /job:localhost/replica:0/task:0/cpu:0
+I tensorflow/core/common_runtime/simple_placer.cc:827] AddN: (AddN)/job:localhost/replica:0/task:0/cpu:0
+b_1: (Const): /job:localhost/replica:0/task:0/gpu:1
+I tensorflow/core/common_runtime/simple_placer.cc:827] b_1: (Const)/job:localhost/replica:0/task:0/gpu:1
+a_1: (Const): /job:localhost/replica:0/task:0/gpu:1
+I tensorflow/core/common_runtime/simple_placer.cc:827] a_1: (Const)/job:localhost/replica:0/task:0/gpu:1
+b: (Const): /job:localhost/replica:0/task:0/gpu:0
+I tensorflow/core/common_runtime/simple_placer.cc:827] b: (Const)/job:localhost/replica:0/task:0/gpu:0
+a: (Const): /job:localhost/replica:0/task:0/gpu:0
+I tensorflow/core/common_runtime/simple_placer.cc:827] a: (Const)/job:localhost/replica:0/task:0/gpu:0
+[[  44.   56.]
+ [  98.  128.]]
+```
+
+
+
 #distributed Tensorflow
 
 이 문서에는 https://tensorflowkorea.gitbooks.io/tensorflow-kr/content/g3doc/how_tos/distributed/ 링크의 문서를 엄청나게(90% 이상) 참조, 복북 하였음을 미리 공지합니다.
