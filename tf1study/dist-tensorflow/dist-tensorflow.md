@@ -12,7 +12,7 @@ Tensorflow 0.8 이후 버젼부터 분산 처리 지원(GPU)
 
 /gpu:1 : 서버의 두번째 gpu 지정
 
-/gpu:n : 서버의 n-1 번째 gpup 지정
+/gpu:n : 서버의 n-1 번째 gpu 지정
 
 
 
@@ -276,7 +276,7 @@ sess.run(c)
 
 [예제](https://github.com/tensorflow/tensorflow/blob/r0.7/tensorflow/models/image/cifar10/cifar10_multi_gpu_train.py)
 
-위 코드에서 --num_gpus 인자 값이 1 이상이면, batch_size 만큼 데이터를 읽어 와서 gpu 마다 할당하여 작업을수행(위 그림과 같이)
+위 코드에서 --num_gpus 인자 값이 1 이상이면, batch_size 만큼 데이터를 읽어 와서 gpu 마다 할당하여 작업을수행(
 
 tf.Variable, tf.Const를 선언할때 gpu를 지정가능.해당 변수 혹은 상수 처리시 정의된 gpu를 사용.
 
@@ -326,10 +326,10 @@ ClusterSpec 생성
 클러스터 스펙은 tf.train.ClusterSpec 객체를 생성함으로써 정의 가능.
 이 객체를 생성할때 python Dictionary형식으로 스펙을 지정해서 넘김.
 
-| tf.train.ClusterSpec 생성자                 |      |
-| ---------------------------------------- | ---- |
-| tf.train.ClusterSpec({"local":["localhost:2222","localhost:2223"]}) |      |
-| tf.train.ClusterSpec({"worker":["worker0.example.com:2222","worker1.example.com:2222","worker2.example.com:2222"],"ps":["ps0.example.com:2222","ps1.example.com:2222"]}) |      |
+| tf.train.ClusterSpec 생성자                 |         |
+| ---------------------------------------- | ------- |
+| tf.train.ClusterSpec({"local":["localhost:2222","localhost:2223"]}) | local   |
+| tf.train.ClusterSpec({"worker":["worker0.example.com:2222","worker1.example.com:2222","worker2.example.com:2222"],"ps":["ps0.example.com:2222","ps1.example.com:2222"]}) | cluster |
 
 Cluster server 객체 생성
 Cluster Server는 tf.train.Server객체를 생성 한다.
@@ -341,7 +341,7 @@ Cluster Server는 tf.train.Server객체를 생성 한다.
 두개의 서버를 가지는 클러스터를 구동 하려면 아래와 같이 수행 하면 된다.
 
 \#0번 작업
-cluster = tf.train.SlusterSpec({"local":
+cluster = tf.train.ClusterSpec({"local":
 ["localhost:2222","localhost:2223"]})
 server = tf.train.Server(cluster, job_name="local", task_index=0)
 
