@@ -46,7 +46,7 @@ DeepLearning Sites
 - [활성화 함수](https://en.wikipedia.org/wiki/Activation_function)
 - [Learning from Imbalanced Data](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.331.6205&rep=rep1&type=pdf)
 - [Editorial: Special Issue on Learning from Imbalanced Data Sets](https://www3.nd.edu/~dial/publications/chawla2004editorial.pdf)
-
+- [김훈 교수님 딥러닝, 기계학습 강의](https://hunkim.github.io/ml/)
 
 One Class Classification
 ===
