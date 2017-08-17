@@ -57,7 +57,7 @@ One Class Classification
  - [One-class document classification via Neural Networks$](http://cs.haifa.ac.il/~manevitz/Publication/One-class%20document%20classification%20via%20Neural%20Networks.pdf)
  - [On the Exploitation of One Class Classification to Distinguish Food vs Non-Food Images](http://iplab.dmi.unict.it/madima2015/Madima2015OneClassClassification.pdf)
  - [food vs not food](http://iplab.dmi.unict.it/madima2015/Presentazione_MADIMA.pdf)
- -[ONE-CLASS SUBJECT IDENTIFICATION FROM SMARTPHONE-ACQUIRED WALKING DATA](http://tesi.cab.unipd.it/51479/1/merelli_luca_tesi.pdf)
+    -[ONE-CLASS SUBJECT IDENTIFICATION FROM SMARTPHONE-ACQUIRED WALKING DATA](http://tesi.cab.unipd.it/51479/1/merelli_luca_tesi.pdf)
  - [One-class classification](http://homepage.tudelft.nl/n9d04/thesis.pdf)
  - [Deep Structured Energy Based Models for Anomaly Detection](https://arxiv.org/pdf/1605.07717.pdf)
 
@@ -92,8 +92,12 @@ CNN 관련 컨텐츠
 블로그 
 ===
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
+
 - [openface로 얼굴 인식 시키기](./blog/post3/content.md)
-- [학습 시킨것 사용하기](./blog/4/use_tensorflow.md)
+
+- [학습 시킨것 사용하기](./blog/post4/use_tensorflow.md)
+
+  ​
 
 tensorflow document
 ===
