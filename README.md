@@ -97,6 +97,8 @@ CNN 관련 컨텐츠
 
 - [학습 시킨것 사용하기](./blog/post4/use_tensorflow.md)
 
+- [밸런스가 맞지 않은 데이타로 지도학습 하기](./blog/post5/contents.md)
+
   ​
 
 tensorflow document
