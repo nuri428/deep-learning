@@ -117,3 +117,6 @@ GAN
 tensorflow 스터디  
 ===
 - [tensorflow](./tf1study/index.md)
+
+# the others 
+
