@@ -112,7 +112,10 @@ tensorflow document
 GAN
 ===
 - [Deep Generative Models](https://www.slideshare.net/HyungjooCho2/deep-generative-modelpdf)
-
+- [Keras-GAN](https://github.com/eriklindernoren/Keras-GAN)
+- [KerasGAN](https://github.com/osh/KerasGAN)
+- [keras dcgan](https://github.com/jacobgil/keras-dcgan)
+- [keras MNIST GAN](https://github.com/Zackory/Keras-MNIST-GAN)
 
 tensorflow 스터디  
 ===
