@@ -1,5 +1,4 @@
-Deep Learning for Natural Language Processing
-=======
+#Deep Learning for Natural Language Processing
 - [understanding-natural-language-deep-neural-networks-using-torch](https://devblogs.nvidia.com/parallelforall/understanding-natural-language-deep-neural-networks-using-torch/)
 - [deep-learning-nutshell-sequence-learning](https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-sequence-learning/)
 - [Deep Learning for NLP(without Magic)](./nlp/socher-lxmls.pdf)
@@ -9,117 +8,73 @@ Deep Learning for Natural Language Processing
 - [Natural Language Understanding](http://www.inf.ed.ac.uk/teaching/courses/nlu/lectures.html)
 - [Natural Language Understanding with Distributed Representations](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
 - [awesome-nlp](https://github.com/keonkim/awesome-nlp#user-content-python)
+- [cs224n Natual Language Processing With Deep Learning](https://web.stanford.edu/class/cs224n/archive/WWW_1617/lecture_notes/cs224n-2017-notes6.pdf)
+- Attention Model
+  - [Show, attend and Tell : Neural Image Caption Generation with Visual Attention](https://arxiv.org/pdf/1502.03044v3.pdf)
+  - [stackoverflow how to add an attention mechanism in keras](https://stackoverflow.com/questions/42918446/how-to-add-an-attention-mechanism-in-keras)
+  - [How to add Attention on top of a Recurrnet Layer Text Classification](https://github.com/keras-team/keras/issues/4962)
+  - [Text classification git hub](https://github.com/brightmart/text_classification)
+  - [Effective Approaches to Attention-based Neural Machine Translation](https://nlp.stanford.edu/pubs/emnlp15_attn.pdf)
+  - Attention is all you need [논문](https://arxiv.org/abs/1706.03762)   [한글 리뷰 ](https://github.com/YBIGTA/DeepNLP-Study/wiki/Attention-Is-All-You-Need-%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0) [Michal Chromiak'sblog ](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.WyZQ1nWFNth)
+  - [How to Develop an Encoder-Decoder Model with Attention for Sequence-to-Sequence Prediction in Keras](https://machinelearningmastery.com/encoder-decoder-attention-sequence-to-sequence-prediction-keras/)
+  - [Attention and Memory in Deep Learning and NLP](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
+  - [keras-attention git hub link](https://github.com/datalogue/keras-attention)
+  - [Towards Data Science, Attention Models in NLP a quick introduction](https://towardsdatascience.com/attention-models-in-nlp-a-quick-introduction-2593c1fe35eb)
+  - ​
+- Text Classification
+  - [Best Practices for Document Classification with Deep Learning](https://machinelearningmastery.com/best-practices-document-classification-deep-learning/)
+    - Word Embedding + CNN
+    - Single Layer Cnn Archirecture
+    - dial in CNN Hyperparameters
+    - Consider Character-Level Cnns
+    - Consider Deeper CNNs for Classification
+      - [Very Deep Convolution Networks for Text Classification](https://arxiv.org/pdf/1606.01781.pdf)
+  - [Document Classification kdnuggets](https://www.kdnuggets.com/2015/01/text-analysis-101-document-classification.html)
+  - ​
+  - ​
 
-
-
-Chatbot
-===
+#chatbot
 - [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
 - [ChatterBot](https://github.com/gunthercox/ChatterBot)
 - [From Language to Information](./chatbot/chatbot.pdf)
-- [Natural Language Pipeline for CHatbots](https://hackernoon.com/natural-language-pipeline-for-chatbots-897bda41482)
-- [봇그리다](https://brunch.co.kr/@pilsogood/3)
 
+#Distribute Computing
+- [Hadoop 설정](./distribute/hadoop_config.md)
+- [Spark 설정](./distribute/spark_config.md)
 
-Reinforce Learning 
-===
+#Reinforce Learning 
 - [rl](https://github.com/aikorea/awesome-rl)
 - [[강화학습 기반의 자율적인 행동 학습]](http://www.gameai.net/Article/RLAgent/RLAgent.htm)
 - [강화학습](http://solarisailab.com/archives/57)
 
-Deep Learning Library
-===
+#Deep Learning Library
 - 범용 라이브러리 
-  + [Keras](./library/keras/README.md)
-  + [Theano](./library/Theano/README.MD)
-  + [tensorflow](./library/tensorflow/README.MD)
+[Keras](./keras/README.md)
+[Theano](./Theano/README.MD)
+[tensorflow](./tensorflow/README.MD)
 - 이미지 특화 라이브러리 
-  + [openface](./library/openface/README.md)
+[openface](./openface/README.md)
 
-DeepLearning Sites 
-===
-- [라온피플](http://m.blog.naver.com/laonple/220738560542)
+#DeepLearning Sites 
 - [http://www.wildml.com/](http://www.wildml.com/)
 - [Machine Learning Cookbook](https://www.gitbook.com/book/bigaidream/subsets_ml_cookbook/details)
 - [앤드류 응 교수 인터뷰...](http://events.technologyreview.com/emtech/digital/16/video/watch/andrew-ng-deep-learning/)
 - [스탠포드대 기계학습 코세라 강의](https://www.coursera.org/learn/machine-learning/home/welcome)
-- [활성화 함수](https://en.wikipedia.org/wiki/Activation_function)
-- [Learning from Imbalanced Data](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.331.6205&rep=rep1&type=pdf)
-- [Editorial: Special Issue on Learning from Imbalanced Data Sets](https://www3.nd.edu/~dial/publications/chawla2004editorial.pdf)
-- [김훈 교수님 딥러닝, 기계학습 강의](https://hunkim.github.io/ml/)
 
-One Class Classification
-===
- - [A Survey of Recent Trends in One Class Classification](https://cs.uwaterloo.ca/~s255khan/files/occ_survey09.pdf)
- - [occ](https://www.hindawi.com/journals/mpe/2015/412957/)
- - [scilearn occ](http://scikit-learn.org/stable/auto_examples/svm/plot_oneclass.html)
- - [fMRI Analysis via One-class Machine Learning Techniques](https://www.ijcai.org/Proceedings/05/Papers/post-0172.pdf)
- - [One-class document classification via Neural Networks$](http://cs.haifa.ac.il/~manevitz/Publication/One-class%20document%20classification%20via%20Neural%20Networks.pdf)
- - [On the Exploitation of One Class Classification to Distinguish Food vs Non-Food Images](http://iplab.dmi.unict.it/madima2015/Madima2015OneClassClassification.pdf)
- - [food vs not food](http://iplab.dmi.unict.it/madima2015/Presentazione_MADIMA.pdf)
-    -[ONE-CLASS SUBJECT IDENTIFICATION FROM SMARTPHONE-ACQUIRED WALKING DATA](http://tesi.cab.unipd.it/51479/1/merelli_luca_tesi.pdf)
- - [One-class classification](http://homepage.tudelft.nl/n9d04/thesis.pdf)
- - [Deep Structured Energy Based Models for Anomaly Detection](https://arxiv.org/pdf/1605.07717.pdf)
-
-Tensorboard 사용법
-===
-- [텐서보드 사용법](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tensorboard/README.md)
-- [텐서보드 사용법](https://www.tensorflow.org/versions/master/get_started/summaries_and_tensorboard)
-
-
-CNN 관련 컨텐츠
-===
+#CNN 관련 컨텐츠
 - [컨불루션 뉴럴넷1](http://t-robotics.blogspot.kr/2016/05/convolutional-neural-network_31.html#.V1ZrWpOLSlM)
 - [컨불루션 뉴럴넷2](http://keunwoochoi.blogspot.kr/2015/07/convolutional-neural-network.html)
 - [컨불루션 뉴럴넷 개요](http://keunwoochoi.blogspot.kr/search/label/CNNs)
-- [dcnn-intro-WinstonHsu-15s](http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015/NN%20Lecture/dcnn-intro-WinstonHsu-15s.pdf)
-- [ai korea](http://aikorea.org/cs231n/convolutional-networks/)
-- [Deep Mnist](http://antilibrary.org/1043)
-- [VGG Model](https://github.com/machrisaa/tensorflow-vgg/blob/master/test_vgg19_trainable.py)
-- [The Impact of Imbalanced Training Data for Convolutional Neural Networks](https://www.kth.se/social/files/588617ebf2765401cfcc478c/PHensmanDMasko_dkand15.pdf)
-- [cs231n](http://cs231n.github.io/convolutional-networks/)
-- [HANDWRITTEN DIGITS RECOGNITION USING DEEP LEARNING](https://faisalorakzai.wordpress.com/2016/06/01/handwritten-digits-recognition-using-deep-learning/)
 
+#얼굴인식
+- [얼굴인식](./faceRecon/contents.md)
 
-얼굴인식
-===
-- [얼굴인식](./library/faceRecon/contents.md)
-
-강화학습
-===
+#강화학습
 - [퐁을 학습 시키자](http://keunwoochoi.blogspot.kr/2016/06/andrej-karpathy.html)
 
-블로그 
-===
+#블로그 
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
-
 - [openface로 얼굴 인식 시키기](./blog/post3/content.md)
 
-- [학습 시킨것 사용하기](./blog/post4/use_tensorflow.md)
-
-- [밸런스가 맞지 않은 데이타로 지도학습 하기](./blog/post5/contents.md)
-
-  ​
-
-tensorflow document
-===
-- [분산](https://www.tensorflow.org/deploy/distributed)
-- [분산 텐서플로우 클러스터](https://www.tensorflow.org/api_docs/python/tf/train/ClusterSpec)
-- [기본강의](https://github.com/hunkim/DeepLearningZeroToAll/blob/master/lab-13-3-mnist_save_restore.py)
-- [고성능모델](https://www.tensorflow.org/performance/performance_models)
-
-
-GAN
-===
-- [Deep Generative Models](https://www.slideshare.net/HyungjooCho2/deep-generative-modelpdf)
-- [Keras-GAN](https://github.com/eriklindernoren/Keras-GAN)
-- [KerasGAN](https://github.com/osh/KerasGAN)
-- [keras dcgan](https://github.com/jacobgil/keras-dcgan)
-- [keras MNIST GAN](https://github.com/Zackory/Keras-MNIST-GAN)
-
-tensorflow 스터디  
-===
-- [tensorflow](./tf1study/index.md)
-
-# the others 
-
+#SPARK
+- [BerkeleyX: CS105x Introduction to Apache Spark 정리](./SPARK/Introduction to Apache Spark_정리.md)
