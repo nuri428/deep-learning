@@ -1,0 +1,120 @@
+http://git.zjulearning.org/soariez/caffe/raw/05314ffbf499481214596cccb1458cb109fd0c4f/docs/installation.md
+
+Caffe는 Theano랑은 다른 Deep learning 라이브러리 입니다. 
+
+이 라이브러리를 설치하고 난후 pyCaffe를 설치하면 python을 통해 사용할 수 있습니다. 
+
+설치하기 위해서는 다음과 같은 라이브러리가 필요로 합니다.  
+
+Caffe has several dependencies.
+CUDA is required for GPU mode.
+library version 7.0 and the latest driver version are recommended, but 6.* is fine too
+5.5, and 5.0 are compatible but considered legacy
+BLAS via ATLAS, MKL, or OpenBLAS.
+Boost >= 1.55
+OpenCV >= 2.4 including 3.0
+protobuf, glog, gflags
+IO libraries hdf5, leveldb, snappy, lmdb
+Pycaffe and Matcaffe interfaces have their own
+
+pyCaffe를 설치하기 위해서는 python 2.7이상 버젼이 필요로 합니다. 
+
+시스템 라이브러리는 다음과 같이 설치 합니다. 
+
+$yum install protobuf-devel leveldb-devel snappy-devel opencv-devel boost-devel hdf5-deve
+
+$git clone https://github.com/BVLC/caffe 
+#caffe를 다운 로드 받습니다. 
+$cd python
+$for req in $(cat requirements.txt); do pip install $req; done
+#python 디렉토리에가서 필요한 라이브러리를 설치합니다.
+
+centos에서 protoc와 glog, gflags는 다음과 같이 설치 합니다. 
+
+protoc command not found 발생하면 다음과 같이 합니다.
+wget http://protobuf.googlecode.com/files/protobuf-2.4.1.tar.bz2
+tar xfj protobuf-2.4.1.tar.bz2
+pushd protobuf-2.4.1
+./configure
+make
+sudo make install
+
+
+# glog
+wget https://google-glog.googlecode.com/files/glog-0.3.3.tar.gz
+tar zxvf glog-0.3.3.tar.gz
+cd glog-0.3.3
+./configure
+make && make install
+
+# gflags
+#주의 사항. cmake 툴이 안 깔려 있으면 깔아야 함. 
+wget https://github.com/schuhschuh/gflags/archive/master.zip
+unzip master.zip
+cd gflags-master
+mkdir build && cd build
+cmake .. make && make install
+
+#open-cv 설치 
+http://opencv.org/ 다운로드 
+zip 압축 해제. 
+mkdir build && cd build
+cmake .. make && make instal
+
+#leveldb 설치 
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/leveldb-1.7.0-2.el6.x86_64.rpm
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/leveldb-devel-1.7.0-2.el6.x86_64.rpm
+rpm --install leveldb-1.7.0-2.el6.x86_64.rpm
+rpm --install leveldb-devel-1.7.0-2.el6.x86_64.rpm
+
+#lmdb 설치 
+https://gitorious.org/mdb/mdb.git 에서 git clone
+make install 
+
+
+위와 같은 라이브러리가 설치 된후 
+
+build 디렉토리로 가서 cmake .. 명령으로 make을 작성하는데.. 
+
+atlas 경로를 제대로 찾지 못합니다. 
+
+find . -name FindAtlas.cmake로 해당 파일을 찾으신 후 
+
+set(Atlas_LIB_SEARCH_PATHS 
+ /usr/lib/atlas
+ /usr/lib/atlas-base
+
+저렇게 두줄로 되어 있는 중간에 
+/usr/lib64/atlas 를 추가 합니다. 
+
+그리고 
+
+find_library(Atlas_LAPACK_LIBRARY NAMES alapack_r alapack lapack_atlas PATHS ${Atlas_LIB_SEARCH_PATHS})
+
+저 라인에 lapack을 추가 합니다. 
+
+find_library(Atlas_LAPACK_LIBRARY NAMES alapack_r alapack lapack_atlas lapack PATHS ${Atlas_LIB_SEARCH_PATHS})
+
+바꾸면 위와 같이 됩니다. 
+
+그리고 c++ boost 1.4.7 이상의 라이브러리를 필요로 하니 저 이하버젼인 분은 boost.org에서 최신 릴리즈 버젼을 받아서 설치하세요 
+
+그렇게 하고 난후 cmake ..을 실행시키면 정상적으로 make파일이 생성 됩니다. 
+
+build 디렉토리 밑에서 make && make install을 실행 시키면 정상적으로 설치가 됩니다. 
+
+make install 이 끝나면 
+
+install/python 디렉토리 밑에 pyCaffe가 있는데 
+
+경로 잡기가 애매해서 
+
+/usr/local/lib/python2.7/site-package 로 복사하고 
+
+install/lib 및에 있는 라이브러리는 /usr/local/lib64/로 복사해 놓으면 
+
+ipython에서 바로 뛰울 수 있습니다. 
+
+예제 코드가 있어서 좀 봤는데 전혀 실행이 안되네요...  T_T 
+
+아참 open-cv가 설치에 제법 시간이 걸립니다. 참고 하세요 ~
