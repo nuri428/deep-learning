@@ -1,4 +1,8 @@
-#Deep Learning for Natural Language Processing
+# Deep Learning for Natural Language Processing
+
+- Lecture
+  - [standford cs224n Natual Language Processing With Deep Learning](http://web.stanford.edu/class/cs224n/)
+  - [oxford 2016-2017 Deep Learning for Natural language Process](https://www.cs.ox.ac.uk/teaching/courses/2016-2017/dl/), [lectures](https://github.com/oxford-cs-deepnlp-2017/lectures)
 - [understanding-natural-language-deep-neural-networks-using-torch](https://devblogs.nvidia.com/parallelforall/understanding-natural-language-deep-neural-networks-using-torch/)
 - [deep-learning-nutshell-sequence-learning](https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-sequence-learning/)
 - [Deep Learning for NLP(without Magic)](./nlp/socher-lxmls.pdf)
@@ -8,7 +12,7 @@
 - [Natural Language Understanding](http://www.inf.ed.ac.uk/teaching/courses/nlu/lectures.html)
 - [Natural Language Understanding with Distributed Representations](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
 - [awesome-nlp](https://github.com/keonkim/awesome-nlp#user-content-python)
-- [cs224n Natual Language Processing With Deep Learning](https://web.stanford.edu/class/cs224n/archive/WWW_1617/lecture_notes/cs224n-2017-notes6.pdf)
+- [BiLSTM 헤게모니](https://ratsgo.github.io/natural%20language%20processing/2017/10/22/manning/)
 - Attention Model
   - [Show, attend and Tell : Neural Image Caption Generation with Visual Attention](https://arxiv.org/pdf/1502.03044v3.pdf)
   - [stackoverflow how to add an attention mechanism in keras](https://stackoverflow.com/questions/42918446/how-to-add-an-attention-mechanism-in-keras)
@@ -20,7 +24,13 @@
   - [Attention and Memory in Deep Learning and NLP](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
   - [keras-attention git hub link](https://github.com/datalogue/keras-attention)
   - [Towards Data Science, Attention Models in NLP a quick introduction](https://towardsdatascience.com/attention-models-in-nlp-a-quick-introduction-2593c1fe35eb)
-  - ​
+  - 한글 블로그 
+    - [어텐션 메커니즘](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/10/06/attention/) [어텐션 메커니즘2](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/10/06/attention/)
+    - [어텐션 메커니즈 시각화](http://docs.likejazz.com/attention/)
+    - [딥러닝이 덧셈하는법 어텐션 메커니즘으로 살펴보기](http://freesearch.pe.kr/archives/4724)
+    - [what is attention mechanism, youtube 간접 링크](http://hugrypiggykim.com/2018/02/09/%EB%85%BC%EB%AC%B8%EC%9D%BD%EA%B8%B0-effective-approaches-to-attention-based-neural-machine-translation/)
+    - [lecture 6 Attention Mechanism](http://dalpo0814.tistory.com/45)
+    - [뉴욕대 조경현 교수님 자연어처리 강의](https://www.edwith.org/deepnlp)
 - Text Classification
   - [Best Practices for Document Classification with Deep Learning](https://machinelearningmastery.com/best-practices-document-classification-deep-learning/)
     - Word Embedding + CNN
@@ -30,24 +40,27 @@
     - Consider Deeper CNNs for Classification
       - [Very Deep Convolution Networks for Text Classification](https://arxiv.org/pdf/1606.01781.pdf)
   - [Document Classification kdnuggets](https://www.kdnuggets.com/2015/01/text-analysis-101-document-classification.html)
-  - ​
-  - ​
+- for Korean
+  - [lovit github](https://github.com/lovit/textmining-tutorial)
+    - 한국어 텍스트 마이닝을 위한 튜토리얼
+  - [Konlpy](https://konlpy-ko.readthedocs.io/)
+    - 박은정님이 공개하신 한국어 형태소 분석기 라이브러리 묶음
 
-#chatbot
+# chatbot
 - [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
 - [ChatterBot](https://github.com/gunthercox/ChatterBot)
 - [From Language to Information](./chatbot/chatbot.pdf)
 
-#Distribute Computing
+# Distribute Computing
 - [Hadoop 설정](./distribute/hadoop_config.md)
 - [Spark 설정](./distribute/spark_config.md)
 
-#Reinforce Learning 
+# Reinforce Learning 
 - [rl](https://github.com/aikorea/awesome-rl)
 - [[강화학습 기반의 자율적인 행동 학습]](http://www.gameai.net/Article/RLAgent/RLAgent.htm)
 - [강화학습](http://solarisailab.com/archives/57)
 
-#Deep Learning Library
+# Deep Learning Library
 - 범용 라이브러리 
 [Keras](./keras/README.md)
 [Theano](./Theano/README.MD)
@@ -55,26 +68,26 @@
 - 이미지 특화 라이브러리 
 [openface](./openface/README.md)
 
-#DeepLearning Sites 
+# DeepLearning Sites 
 - [http://www.wildml.com/](http://www.wildml.com/)
 - [Machine Learning Cookbook](https://www.gitbook.com/book/bigaidream/subsets_ml_cookbook/details)
 - [앤드류 응 교수 인터뷰...](http://events.technologyreview.com/emtech/digital/16/video/watch/andrew-ng-deep-learning/)
 - [스탠포드대 기계학습 코세라 강의](https://www.coursera.org/learn/machine-learning/home/welcome)
 
-#CNN 관련 컨텐츠
+# CNN 관련 컨텐츠
 - [컨불루션 뉴럴넷1](http://t-robotics.blogspot.kr/2016/05/convolutional-neural-network_31.html#.V1ZrWpOLSlM)
 - [컨불루션 뉴럴넷2](http://keunwoochoi.blogspot.kr/2015/07/convolutional-neural-network.html)
 - [컨불루션 뉴럴넷 개요](http://keunwoochoi.blogspot.kr/search/label/CNNs)
 
-#얼굴인식
+# 얼굴인식
 - [얼굴인식](./faceRecon/contents.md)
 
-#강화학습
+# 강화학습
 - [퐁을 학습 시키자](http://keunwoochoi.blogspot.kr/2016/06/andrej-karpathy.html)
 
-#블로그 
+# 블로그 
 - [CNN으로 인물 인식 시키기 삽질기.](./blog/post1/contents.md)
 - [openface로 얼굴 인식 시키기](./blog/post3/content.md)
 
-#SPARK
+# SPARK
 - [BerkeleyX: CS105x Introduction to Apache Spark 정리](./SPARK/Introduction to Apache Spark_정리.md)
