@@ -62,11 +62,12 @@
 
 # Deep Learning Library
 - 범용 라이브러리 
-[Keras](./keras/README.md)
-[Theano](./Theano/README.MD)
-[tensorflow](./tensorflow/README.MD)
+  [Keras](./keras/README.md)
+  [Theano](./Theano/README.MD)
+  [tensorflow](./tensorflow/README.MD)
+- TF eager mode (./tensorflow-eager)
 - 이미지 특화 라이브러리 
-[openface](./openface/README.md)
+  [openface](./openface/README.md)
 
 # DeepLearning Sites 
 - [http://www.wildml.com/](http://www.wildml.com/)
