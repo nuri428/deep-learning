@@ -40,11 +40,28 @@
     - Consider Deeper CNNs for Classification
       - [Very Deep Convolution Networks for Text Classification](https://arxiv.org/pdf/1606.01781.pdf)
   - [Document Classification kdnuggets](https://www.kdnuggets.com/2015/01/text-analysis-101-document-classification.html)
-- for Korean
-  - [lovit github](https://github.com/lovit/textmining-tutorial)
-    - 한국어 텍스트 마이닝을 위한 튜토리얼
-  - [Konlpy](https://konlpy-ko.readthedocs.io/)
-    - 박은정님이 공개하신 한국어 형태소 분석기 라이브러리 묶음
+  - for Korean
+    - [lovit github](https://github.com/lovit/textmining-tutorial)
+      - 한국어 텍스트 마이닝을 위한 튜토리얼
+    - [Konlpy](https://konlpy-ko.readthedocs.io/)
+      - 박은정님이 공개하신 한국어 형태소 분석기 라이브러리 묶음
+- Anomaly Detection
+  - blog
+    - [Neural Networks for Anomaly (Outliers) Detection](https://blog.goodaudience.com/neural-networks-for-anomaly-outliers-detection-a454e3fdaae8) [github link](https://github.com/abelusha/AutoEncoders-for-Anomaly-Detection/blob/master/AutoEncoders-for-Anomaly-Detection.ipynb)
+    - [Anomaly Detection in streaming data with LSTMS](https://drive.google.com/file/d/0B_O25s3dlPczREhiNEJOS1prOWs/view)
+    - [iot deep learning anomaly detection](https://developer.ibm.com/tutorials/iot-deep-learning-anomaly-detection-5/)
+    - [Introduction Anomaly Detection](https://www.kdnuggets.com/2017/04/datascience-introduction-anomaly-detection.html)
+    - [credit card fruad detection](https://medium.com/@curiousily/credit-card-fraud-detection-using-autoencoders-in-keras-tensorflow-for-hackers-part-vii-20e0c85301bd)
+  - Githubs 
+    - [lstm anomaly detect](https://github.com/aurotripathy/lstm-anomaly-detect)
+    - [Anomaly Detection for Temporal Data using LSTM. paper source code](https://github.com/akash13singh/lstm_anomaly_thesis)
+    - [RNN-Time-series-Anomaly-Detection](https://github.com/chickenbestlover/RNN-Time-series-Anomaly-Detection)
+      - HOT SAX: Efficiently Finding the Most Unusual Time Series Subsequence." In The Fifth IEEE International Conference on Data Mining. (2005) 
+    - [LSTM Based Anomaly Detection](https://github.com/jramapuram/LSTM_Anomaly_Detector)
+    - [Keras Anomaly Detection](https://github.com/chen0040/keras-anomaly-detection)
+    - [Anomaly Detection in Streaming Data with LSTMs](https://github.com/marionleborgne/lstm-talk)
+    - [AutoEncoders-for-Anomaly-Detection](https://github.com/abelusha/AutoEncoders-for-Anomaly-Detection)
+    - 
 
 # chatbot
 - [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
