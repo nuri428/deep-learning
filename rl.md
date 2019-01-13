@@ -14,6 +14,8 @@
 
 - [퐁을 학습 시키자](http://keunwoochoi.blogspot.kr/2016/06/andrej-karpathy.html)
 
+- [Deep Reinforcement Learning based Recommendation With Explicit User-Item Interactions Modeling](https://arxiv.org/pdf/1810.12027.pdf)
+
 - Multi agent
 
   - [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://github.com/openai/multiagent-particle-envs)
