@@ -1,4 +1,4 @@
-Reinforcement Learning
+# Reinforcement Learning
 
 - [rl](https://github.com/aikorea/awesome-rl)
 
@@ -10,10 +10,15 @@ Reinforcement Learning
 
 - [Reinforcement Learning with Python](https://towardsdatascience.com/reinforcement-learning-with-python-8ef0242a2fa2)
 
+- [Simple Reinforcement Learning with Tensorflow part 8 AC3](http://ishuca.tistory.com/400)
+
+- [퐁을 학습 시키자](http://keunwoochoi.blogspot.kr/2016/06/andrej-karpathy.html)
+
 - Multi agent
 
   - [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://github.com/openai/multiagent-particle-envs)
   - [AI Arena](https://github.com/hilkoc/ai_arena)
+  - [멀티에이전트 시스템 연구 동향](http://www.itfind.or.kr/WZIN/jugidong/970/97002.html)
 
 - Book
 
