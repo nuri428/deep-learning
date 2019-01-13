@@ -72,10 +72,8 @@
 - [Hadoop 설정](./distribute/hadoop_config.md)
 - [Spark 설정](./distribute/spark_config.md)
 
-# Reinforce Learning 
-- [rl](https://github.com/aikorea/awesome-rl)
-- [[강화학습 기반의 자율적인 행동 학습]](http://www.gameai.net/Article/RLAgent/RLAgent.htm)
-- [강화학습](http://solarisailab.com/archives/57)
+# [Reinforce Learning](./rl.md) 
+
 
 # Deep Learning Library
 - 범용 라이브러리 
