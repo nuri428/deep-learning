@@ -4,6 +4,10 @@
 
 # [Data Science](./datascience.md)
 
+
+
+# [modelling 테크닉](./modelling.md)
+
 # chatbot
 - [DEEP LEARNING FOR CHATBOTS, PART 1 – INTRODUCTION](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)
 - [ChatterBot](https://github.com/gunthercox/ChatterBot)
