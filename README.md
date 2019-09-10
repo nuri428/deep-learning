@@ -6,6 +6,8 @@
 
 
 
+# [TimeSeries Analysis](./timeseries.md) 
+
 # [modelling 테크닉](./modelling.md)
 
 # chatbot
